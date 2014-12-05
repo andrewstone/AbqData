@@ -1,0 +1,19 @@
+[
+  {
+    "form" : "dictionary",
+    "name" : "Public Art",
+    "url" : "http:\/\/data.cabq.gov\/community\/art\/publicart\/PublicArtJSON_ALL",
+    "arrayKey" : "features"
+  },
+  {
+    "name" : "Free Wifi",
+    "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
+    "form" : "excelxml"
+  },
+  {
+    "form" : "dictionary",
+    "name" : "Police Incidents",
+    "url" : "http:\/\/data.cabq.gov\/publicsafety\/policeincidents\/policeincidentsJSON_ALL",
+    "arrayKey" : "features"
+  }
+]
