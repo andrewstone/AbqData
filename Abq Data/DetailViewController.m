@@ -8,7 +8,8 @@
 
 #import "DetailViewController.h"
 #import "DataEngine.h"
-
+#import "RemoteImageTableViewCell.h"
+#import "ArtCardViewController.h"
 @interface DetailViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -20,29 +21,61 @@
 }
 #define IS_GOOD(x) ([x isKindOfClass:[NSString class]] && x.length > 0)
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"junk"];
+	NSDictionary *obj = self.objects[indexPath.row];
+	RemoteImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"junk"];
 	
 	if (!cell){
-		cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"junk"];
+		cell = [[RemoteImageTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"junk"];
+	}
+	
+
+// for art, this works:
+	NSString *url =[obj valueForKeyPath:@"attributes.JPG_URL"];
+	if (IS_GOOD(url)) {
+		[cell setURL:url];
+	}
+	NSString *s = [obj valueForKeyPath:@"attributes.TITLE"];
+	if (IS_GOOD(s))
+		cell.textLabel.text = s;
+	else cell.textLabel.text = @"seek other title key";
+	
+	
+	//     "ARTIST": "David Anderson",
+	// "ADDRESS": "4440 Osuna NE",
+
+	NSString *artist = [obj valueForKeyPath:@"attributes.ARTIST"];
+	NSString *address = [obj valueForKeyPath:@"attributes.ADDRESS"];
+	if(IS_GOOD(artist) || IS_GOOD(address)) {
+		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ ~ %@", artist ? artist : @"", address ? address : @""];
+		
 	}
 	
 	
-	NSString *s = [self.objects[indexPath.row] valueForKeyPath:@"attributes.TITLE"];
-	if (IS_GOOD(s))
-		cell.textLabel.text = s;
-	else cell.textLabel.text = @"WTF";
+// as we learn the data sets, feel free to pull
+// other keys that are useful:
 	
 	
 	return cell;
 }
 
+- (NSArray *)objectsSortedByProximityToHere:(NSArray *)objects {
+	// TODO: sort according to user's location
+
+	
+	return objects;
+}
+
 - (void)setupTableView:(NSArray *)data {
-	self.objects = [data copy];
+	
+	self.objects = [self objectsSortedByProximityToHere:data];
+	
 	self.tableView = [[UITableView alloc]initWithFrame:self.view.bounds style:UITableViewStylePlain];
 	[self.view addSubview:self.tableView];
+	self.tableView.rowHeight = 80.0;
 	self.tableView.delegate = self;
 	self.tableView.dataSource = self;
 	self.tableView.scrollsToTop = YES;
+
 	self.tableView.contentInset = UIEdgeInsetsMake(self.navigationController.navigationBar.frame.size.height + 20.0, 0.0, 0.0, 0.0);
 	[self.tableView reloadData];
 }
@@ -56,7 +89,6 @@
 				NSString *key = [self.detailItem valueForKey:@"arrayKey"];
 				NSArray *a = [dataObject valueForKey:key];
 				[self setupTableView:a];
-//				[self.textView setText:[a description]];
 
 			} else			[self.textView setText:[dataObject description]];
 
@@ -88,10 +120,12 @@
 - (void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	static dispatch_once_t onceToken;
-	dispatch_once(&onceToken, ^{
+	if (self.objects.count == 0)
 		[self makeRequest];
-	});
+	
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender  {
 	
 }
 - (void)viewDidLoad {
@@ -102,6 +136,19 @@
 - (void)didReceiveMemoryWarning {
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	NSDictionary *d = self.objects[indexPath.row];
+	// what you do now depends on kind of data
+	// for example, let's deal with art first:
+	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
+		ArtCardViewController *acc = [[ArtCardViewController alloc] init];
+		acc.artistDictionary = d;
+		[self.navigationController pushViewController:acc animated:YES];
+	} else {
+		NSLog(@"Unhandled detail controller - implement for this style of data!");
+	}
 }
 
 @end

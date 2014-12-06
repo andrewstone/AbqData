@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */; };
 		B45EF8AA1A32403C003A3739 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A81A32403C003A3739 /* .gitignore */; };
 		B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */; };
+		B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */ = {isa = PBXBuildFile; fileRef = B49BBFF11A329BD4000CA48C /* notLoadedArt.png */; };
+		B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */; };
 		B4CEA39B1A31510800569F5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA39A1A31510800569F5C /* main.m */; };
 		B4CEA39E1A31510800569F5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA39D1A31510800569F5C /* AppDelegate.m */; };
 		B4CEA3A11A31510800569F5C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA3A01A31510800569F5C /* MasterViewController.m */; };
@@ -32,8 +35,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteImageTableViewCell.h; sourceTree = "<group>"; };
+		B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteImageTableViewCell.m; sourceTree = "<group>"; };
 		B45EF8A81A32403C003A3739 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = SOURCE_ROOT; };
+		B49BBFF11A329BD4000CA48C /* notLoadedArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notLoadedArt.png; path = images/notLoadedArt.png; sourceTree = "<group>"; };
+		B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtCardViewController.h; sourceTree = "<group>"; };
+		B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtCardViewController.m; sourceTree = "<group>"; };
 		B4CEA3951A31510800569F5C /* Abq Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Abq Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4CEA3991A31510800569F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4CEA39A1A31510800569F5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -72,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B49BBFF01A329BC8000CA48C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B49BBFF11A329BD4000CA48C /* notLoadedArt.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		B4CEA38C1A31510800569F5C = {
 			isa = PBXGroup;
 			children = (
@@ -102,11 +118,15 @@
 				B4CEA3A01A31510800569F5C /* MasterViewController.m */,
 				B4CEA3A21A31510800569F5C /* DetailViewController.h */,
 				B4CEA3A31A31510800569F5C /* DetailViewController.m */,
-				B45EF8A81A32403C003A3739 /* .gitignore */,
+				B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */,
+				B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */,
+				B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */,
+				B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */,
 				B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */,
 				B4CEA3A51A31510800569F5C /* Main.storyboard */,
 				B4CEA3A81A31510800569F5C /* Images.xcassets */,
 				B4CEA3AA1A31510800569F5C /* LaunchScreen.xib */,
+				B49BBFF01A329BC8000CA48C /* Images */,
 				B4CEA3981A31510800569F5C /* Supporting Files */,
 			);
 			path = "Abq Data";
@@ -115,6 +135,7 @@
 		B4CEA3981A31510800569F5C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B45EF8A81A32403C003A3739 /* .gitignore */,
 				B4CEA3991A31510800569F5C /* Info.plist */,
 				B4CEA39A1A31510800569F5C /* main.m */,
 			);
@@ -218,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */,
 				B45EF8AA1A32403C003A3739 /* .gitignore in Resources */,
 				B4CEA3A71A31510800569F5C /* Main.storyboard in Resources */,
 				B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */,
@@ -242,10 +264,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4CEA39E1A31510800569F5C /* AppDelegate.m in Sources */,
+				B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */,
 				B4CEA3C41A31520100569F5C /* DataEngine.m in Sources */,
 				B4CEA3A11A31510800569F5C /* MasterViewController.m in Sources */,
 				B4CEA39B1A31510800569F5C /* main.m in Sources */,
 				B4CEA3A41A31510800569F5C /* DetailViewController.m in Sources */,
+				B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

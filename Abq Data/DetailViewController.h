@@ -13,8 +13,8 @@
 
 @property (strong, nonatomic) id detailItem;
 @property (strong, nonatomic) UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (strong, nonatomic) NSArray *objects;
 @end
 

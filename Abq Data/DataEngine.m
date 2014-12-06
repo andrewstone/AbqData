@@ -19,6 +19,20 @@
 	return _dataEngine;
 }
 
+- (id)nukeNulls:(id)d {
+	if ([d isKindOfClass:[NSArray class]]) {
+		for (id dd in d) [self nukeNulls:dd];
+	} else if ([d isKindOfClass:[NSDictionary class]]) {
+		NSArray *allKeys = [d allKeys];
+		for (NSString *key in allKeys) {
+			id val = [d valueForKey:key];
+			if (val == [NSNull null]) [d removeObjectForKey:key];
+			else if ([val isKindOfClass:[NSArray class]] || [val isKindOfClass:[NSDictionary class]]) [self nukeNulls:val];
+		}
+	}
+	return d;
+}
+
 - (void)performRequest:(NSString *)requestName completion:(SDUICompletionBlock)completionBlock {
 	
 // let's assume the url is ready to go
@@ -36,12 +50,21 @@
 				dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
 					if (response.statusCode < 400) {
 						NSError *jsonError = nil;
-						NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:0						error:&jsonError];
+						id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves						error:&jsonError];
+						
+						// to avoid trouble later, remove NSNull's:
+						json = [self nukeNulls:json];
 						
 						if (json == nil) {
 							NSString *s = [self stringForData:data response:response];
-							// a damn redirect???
-							NSLog(s);
+							// The page returns <HEAD>stuff url</HEAD>
+							// We'll encourage the city to do a REDIRECT
+							/*
+							<meta http-equiv="Refresh"
+							content="20; URL=http://data.cabq.gov/X...Y">
+							*/
+							
+							
 							NSScanner *scan = [NSScanner scannerWithString:s];
 							NSString *value;
 							if ([scan scanUpToString:@";url=" intoString:NULL] && [scan scanString:@";url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
