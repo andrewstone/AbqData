@@ -7,8 +7,14 @@
 //
 
 #import "RemoteImageTableViewCell.h"
+static NSCache *cache;
 
-@implementation RemoteImageTableViewCell
+@implementation RemoteImageTableViewCell {
+	NSString *_url;
+}
++ (void)initialize {
+	cache = [[NSCache alloc] init];
+}
 
 - (void)awakeFromNib {
     // Initialization code
@@ -19,5 +25,31 @@
 
     // Configure the view for the selected state
 }
+- (NSString *)url {
+	return _url;
+}
+
+- (void)setURL:(NSString *)path {
+	_url = [path copy];
+
+	UIImage *cached = [cache objectForKey:_url];
+
+	self.imageView.image = cached ? cached :[UIImage imageNamed:@"notLoadedArt"];
+
+	if (!cached) {
+		[NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
+			if (connectionError == nil && data.length) {
+				NSString *this = [[response URL]absoluteString];
+				if ([this isEqualToString:_url]) {
+					UIImage *i = [UIImage imageWithData:data];
+					[cache setObject:i forKey:this];
+					self.imageView.image = i;
+				}
+			}
+		}
+		 ];
+	}
+}
+
 
 @end

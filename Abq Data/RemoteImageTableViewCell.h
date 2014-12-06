@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface RemoteImageTableViewCell : UITableViewCell
-
+//@property (nonatomic, strong) NSString *url;
+- (void)setURL:(NSString *)url;
+- (NSString *)url;
 @end
