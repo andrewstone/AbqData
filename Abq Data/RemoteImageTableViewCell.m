@@ -40,9 +40,11 @@ static NSCache *cache;
 		[NSURLConnection sendAsynchronousRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]] queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
 			if (connectionError == nil && data.length) {
 				NSString *this = [[response URL]absoluteString];
+				// cache even if scrolled off:
+				UIImage *i = [UIImage imageWithData:data];
+				if (i)[cache setObject:i forKey:this];
+				// only set if it's ours:
 				if ([this isEqualToString:_url]) {
-					UIImage *i = [UIImage imageWithData:data];
-					[cache setObject:i forKey:this];
 					self.imageView.image = i;
 				}
 			}

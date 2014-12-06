@@ -12,6 +12,7 @@
 		B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */; };
 		B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */ = {isa = PBXBuildFile; fileRef = B49BBFF11A329BD4000CA48C /* notLoadedArt.png */; };
 		B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */; };
+		B49BBFF71A32CFD0000CA48C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = B49BBFF61A32CFD0000CA48C /* README.md */; };
 		B4CEA39B1A31510800569F5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA39A1A31510800569F5C /* main.m */; };
 		B4CEA39E1A31510800569F5C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA39D1A31510800569F5C /* AppDelegate.m */; };
 		B4CEA3A11A31510800569F5C /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA3A01A31510800569F5C /* MasterViewController.m */; };
@@ -42,6 +43,7 @@
 		B49BBFF11A329BD4000CA48C /* notLoadedArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notLoadedArt.png; path = images/notLoadedArt.png; sourceTree = "<group>"; };
 		B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtCardViewController.h; sourceTree = "<group>"; };
 		B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtCardViewController.m; sourceTree = "<group>"; };
+		B49BBFF61A32CFD0000CA48C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B4CEA3951A31510800569F5C /* Abq Data.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Abq Data.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4CEA3991A31510800569F5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4CEA39A1A31510800569F5C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 		B4CEA38C1A31510800569F5C = {
 			isa = PBXGroup;
 			children = (
+				B49BBFF61A32CFD0000CA48C /* README.md */,
 				B4CEA3F11A3213BA00569F5C /* AbqData.json */,
 				B4CEA3971A31510800569F5C /* Abq Data */,
 				B4CEA3B41A31510800569F5C /* Abq DataTests */,
@@ -269,6 +272,7 @@
 				B4CEA3A11A31510800569F5C /* MasterViewController.m in Sources */,
 				B4CEA39B1A31510800569F5C /* main.m in Sources */,
 				B4CEA3A41A31510800569F5C /* DetailViewController.m in Sources */,
+				B49BBFF71A32CFD0000CA48C /* README.md in Sources */,
 				B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

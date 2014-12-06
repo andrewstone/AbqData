@@ -7,14 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+
 @class RemoteImageTableViewCell;
 
 @interface ArtCardViewController : UIViewController
 
 @property (nonatomic, strong) NSDictionary *artistDictionary;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
-@property (nonatomic, weak) IBOutlet RemoteImageTableViewCell *imageCell;
-@property (nonatomic, weak) IBOutlet UITableViewCell *infoCell;
+@property (nonatomic, weak) IBOutlet MKMapView *mapView;
 
 
 @end

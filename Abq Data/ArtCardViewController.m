@@ -37,15 +37,74 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 	// NOT DONE
-    return 0;
+    return 2;
+}
+/*
+ (lldb) po self.artistDictionary
+ {
+ attributes =     {
+ ADDRESS = "4440 Osuna NE";
+ ARTIST = "David Anderson";
+ "ART_CODE" = 101;
+ "IMAGE_URL" = "http://www.flickr.com/photos/abqpublicart/6831137393/";
+ "JPG_URL" = "http://farm8.staticflickr.com/7153/6831137393_fa38634fd7_m.jpg";
+ LOCATION = "Osuna Median bet.Jefferson/ W.Frontage Rd";
+ OBJECTID = 133901;
+ TITLE = "Almond Blossom/Astronomy";
+ TYPE = "public sculpture";
+ X = "-106.5918383";
+ Y = "35.1555";
+ YEAR = 1986;
+ };
+ geometry =     {
+ x = "-11865749.1623";
+ y = "4185033.103399999";
+ };
+ }
+ */
+
+- (CGFloat)tableView:(UITableView *)t heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	if (indexPath.row == 1) return 400.0;
+	return 60.0;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"use" forIndexPath:indexPath];
-    
+
+	if (indexPath.row == 0) {
+		UITableViewCell *c = [tableView dequeueReusableCellWithIdentifier:@"InfoCell" forIndexPath:indexPath];
+		
+		NSString *artist = [self.artistDictionary valueForKeyPath:@"attributes.ARTIST"];
+		NSString *s = [self.artistDictionary valueForKeyPath:@"attributes.TITLE"];
+		c.textLabel.text = s;
+					
+		c.detailTextLabel.text = artist;
+					   
+		
+		return c;
+	}
+	
+	if (indexPath.row == 1) {
+		RemoteImageTableViewCell *c = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
+		
+		NSString *url = [self.artistDictionary valueForKeyPath:@"attributes.IMAGE_URL"];
+		if (url) {
+			if([url hasPrefix:@"http://www.flickr.com"]) {
+				UITableViewCell *wc = [tableView dequeueReusableCellWithIdentifier:@"WebCell" forIndexPath:indexPath];
+				UIWebView *web = wc.contentView.subviews[0];
+				if ([web isKindOfClass:[UIWebView class]]) {
+					[web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
+				}
+				return wc;
+			}
+			
+		[c setURL:url];
+		return c;
+		}
+	}
+	
     // Configure the cell...
     
-    return cell;
+    return nil;
 }
 
 /*

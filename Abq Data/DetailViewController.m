@@ -126,7 +126,10 @@
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender  {
-	
+	if ([segue.identifier isEqualToString:@"ArtCard"]) {
+		ArtCardViewController *ac = segue.destinationViewController;
+		ac.artistDictionary = sender;
+	}
 }
 - (void)viewDidLoad {
 	[super viewDidLoad];
@@ -143,9 +146,10 @@
 	// what you do now depends on kind of data
 	// for example, let's deal with art first:
 	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
-		ArtCardViewController *acc = [[ArtCardViewController alloc] init];
-		acc.artistDictionary = d;
-		[self.navigationController pushViewController:acc animated:YES];
+		[self performSegueWithIdentifier:@"ArtCard" sender:d];
+//		ArtCardViewController *acc = [[ArtCardViewController alloc] init];
+//		acc.artistDictionary = d;
+//		[self.navigationController pushViewController:acc animated:YES];
 	} else {
 		NSLog(@"Unhandled detail controller - implement for this style of data!");
 	}
