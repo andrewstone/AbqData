@@ -2,7 +2,7 @@
 //  Abq_DataTests.m
 //  Abq DataTests
 //
-//  Created by Androidicus Maximus on 12/4/14.
+//  Created by Andrew Stone on 12/4/14.
 //  Copyright (c) 2014 Stone. All rights reserved.
 //
 

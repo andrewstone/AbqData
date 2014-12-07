@@ -2,7 +2,7 @@
 //  DetailViewController.m
 //  Abq Data
 //
-//  Created by Androidicus Maximus on 12/4/14.
+//  Created by Andrew Stone on 12/4/14.
 //  Copyright (c) 2014 Stone. All rights reserved.
 //
 
@@ -19,41 +19,61 @@
 - (NSInteger)tableView:(UITableView *)t numberOfRowsInSection:(NSInteger)section {
 	return self.objects.count;
 }
+
 #define IS_GOOD(x) ([x isKindOfClass:[NSString class]] && x.length > 0)
+
+
+- (NSString *)valueFrom:(id)obj key:(NSString *)key {
+	if ([self useKeyPath:key]) return [obj valueForKeyPath:key];
+	else return [obj valueForKey:key];
+}
+
+
+// this could be modular or subclassable:
+
+- (void)subclassMods:(RemoteImageTableViewCell *)cell object:(id)obj {
+//	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
+//		
+//		NSString *artist = [obj valueForKeyPath:@"attributes.ARTIST"];
+//		NSString *address = [obj valueForKeyPath:@"attributes.ADDRESS"];
+//		if(IS_GOOD(artist) || IS_GOOD(address)) {
+//			cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ ~ %@", artist ? artist : @"", address ? address : @""];
+//		}
+//	}
+}
+
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSDictionary *obj = self.objects[indexPath.row];
 	RemoteImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"junk"];
 	
+	// select valueForKeyPaths to use depending on the data set (from AbqData.json)
+	NSString *cellIconURL   = [self.detailItem valueForKey:@"cellIconURL"];
+	NSString *cellTitle     = [self.detailItem valueForKey:@"cellTextLabel"];
+	NSString *cellDetail1   = [self.detailItem valueForKey:@"cellDetail1"];
+	NSString *cellDetail2   = [self.detailItem valueForKey:@"cellDetail2"];
+	
 	if (!cell){
-		cell = [[RemoteImageTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:@"junk"];
+		UITableViewCellStyle style = IS_GOOD(cellDetail1) ? UITableViewCellStyleSubtitle : UITableViewCellStyleDefault;
+		cell = [[RemoteImageTableViewCell alloc] initWithStyle:style reuseIdentifier:@"junk"];
 	}
 	
-
-// for art, this works:
-	NSString *url =[obj valueForKeyPath:@"attributes.JPG_URL"];
+	NSString *url =[self valueFrom:obj key:cellIconURL];
 	if (IS_GOOD(url)) {
 		[cell setURL:url];
 	}
-	NSString *s = [obj valueForKeyPath:@"attributes.TITLE"];
+	
+	NSString *s = [self valueFrom:obj key:cellTitle];
 	if (IS_GOOD(s))
 		cell.textLabel.text = s;
-	else cell.textLabel.text = @"seek other title key";
+	else cell.textLabel.text = @"add title key to 'cellTextLabel' value in AbqData.json";
 	
-	
-	//     "ARTIST": "David Anderson",
-	// "ADDRESS": "4440 Osuna NE",
-
-	NSString *artist = [obj valueForKeyPath:@"attributes.ARTIST"];
-	NSString *address = [obj valueForKeyPath:@"attributes.ADDRESS"];
-	if(IS_GOOD(artist) || IS_GOOD(address)) {
-		cell.detailTextLabel.text = [NSString stringWithFormat:@"%@ ~ %@", artist ? artist : @"", address ? address : @""];
-		
+	if ((s = [self valueFrom:obj key:cellDetail1])) {
+		NSString *t = [self valueFrom:obj key:cellDetail2];
+		cell.detailTextLabel.text = t ? [NSString stringWithFormat:@"%@ ~ %@",s,t] : s;
 	}
 	
-	
-// as we learn the data sets, feel free to pull
-// other keys that are useful:
-	
+	[self subclassMods:cell object:(id)obj];
 	
 	return cell;
 }
@@ -80,6 +100,11 @@
 	[self.tableView reloadData];
 }
 
+- (BOOL)useKeyPath:(NSString *)s {
+	NSRange r;
+	return ((r = [s rangeOfString:@"."]).location != NSNotFound);
+}
+
 - (void)makeRequest {
 	NSString *url = [self.detailItem valueForKey:@"url"];
 	[[DataEngine dataEngine] performRequest:url completion:^(id dataObject, NSError *error) {
@@ -87,10 +112,13 @@
 			NSString *form = [self.detailItem valueForKey:@"form"];
 			if ([form isEqualToString:@"dictionary"]) {
 				NSString *key = [self.detailItem valueForKey:@"arrayKey"];
-				NSArray *a = [dataObject valueForKey:key];
+				NSArray *a;
+				if ([self useKeyPath:key])
+					a = [dataObject valueForKeyPath:key];
+				else
+					a = [dataObject valueForKey:key];
 				[self setupTableView:a];
-
-			} else			[self.textView setText:[dataObject description]];
+			} else [self.textView setText:[dataObject description]];
 
 		} else {
 			[[DataEngine dataEngine] showError:error];
@@ -147,9 +175,6 @@
 	// for example, let's deal with art first:
 	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
 		[self performSegueWithIdentifier:@"ArtCard" sender:d];
-//		ArtCardViewController *acc = [[ArtCardViewController alloc] init];
-//		acc.artistDictionary = d;
-//		[self.navigationController pushViewController:acc animated:YES];
 	} else {
 		NSLog(@"Unhandled detail controller - implement for this style of data!");
 	}

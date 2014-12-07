@@ -1,25 +1,40 @@
-[
+ [
   {
-    "form" : "dictionary",
-    "name" : "Public Art",
-    "url" : "http:\/\/data.cabq.gov\/community\/art\/publicart\/PublicArtJSON_ALL",
-    "arrayKey" : "features"
+  "form" : "dictionary",
+  "name" : "Public Art",
+  "url" : "http:\/\/data.cabq.gov\/community\/art\/publicart\/PublicArtJSON_ALL",
+  "arrayKey" : "features",
+  "cellTextLabel" : "attributes.TITLE",
+  "cellDetail1" : "attributes.ARTIST",
+  "cellDetail2" : "attributes.ADDRESS",
+  "cellIconURL" : "attributes.JPG_URL"
   },
   {
-    "name" : "Free Wifi",
-    "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
-    "form" : "excelxml"
+  "name" : "Free Wifi",
+  "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
+  "form" : "excelxml"
   },
- {
- "form" : "dictionary",
- "name" : "Police Incidents",
- "url" : "http:\/\/data.cabq.gov\/publicsafety\/policeincidents\/policeincidentsJSON_ALL",
- "arrayKey" : "features"
- },
- {
- "form" : "dictionary",
- "name" : "Top Paid CABQ Employees",
- "url" : "http:\/\/data.cabq.gov\/government\/top250\/Top250EarnersCABQ2013-en-us.xml",
- "arrayKey" : "data"
- }
-]
+  {
+  "form" : "dictionary",
+  "name" : "Film Locations",
+  "url" : "http:\/\/data.cabq.gov\/business\/filmlocations\/filmlocationsJSON_ALL",
+  "arrayKey" : "features",
+  "cellTextLabel" : "attributes.Title",
+  "cellDetail1" : "attributes.Site",
+  "cellDetail2" : "attributes.Address",
+  "cellIconURL" : "attributes.IMDbLink"
+  },
+  {
+  "form" : "excelxml",
+  "name" : "Pollen History Count",
+  "url" : "http:\/\/data.cabq.gov\/airquality\/pollen\/PollenHistoryCountCABQ-en-us.xml",
+  "arrayKey" : "features"
+  },
+  {
+  "form" : "dictionary",
+  "name" : "Top Paid CABQ Employees",
+  "url" : "http:\/\/data.cabq.gov\/government\/top250\/Top250EarnersCABQ2013-en-us.xml",
+  "arrayKey" : "data.row"
+  }
+  
+  ]
