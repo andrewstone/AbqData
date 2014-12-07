@@ -42,6 +42,11 @@
 //	}
 }
 
+static NSNumberFormatter *numberFormatter = nil;
++ (void)initialize {
+	numberFormatter = [[NSNumberFormatter alloc] init];
+	numberFormatter.numberStyle = NSNumberFormatterCurrencyStyle;
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSDictionary *obj = self.objects[indexPath.row];
@@ -58,6 +63,34 @@
 		cell = [[RemoteImageTableViewCell alloc] initWithStyle:style reuseIdentifier:@"junk"];
 	}
 	
+	// we should really massage data but
+	NSString *rowKey = [self.detailItem valueForKey:@"rowKey"];
+	if (rowKey) {
+		id value = [obj valueForKey:rowKey];
+		if ([value isKindOfClass:[NSArray class]]) {
+			NSArray *a = (NSArray *)value;
+			// we'll have to map correctly but
+			NSUInteger count = a.count;
+			if (count > 0) cell.textLabel.text = a[0];
+			NSMutableString *detail = [NSMutableString stringWithString:@""];
+			
+			if (count > 1) {
+				detail = [NSMutableString stringWithString:a[1]];
+				
+				if (count > 2) {
+					for (int i = 2; i < count - 1; i++) {
+						[detail appendFormat:@" %@",a[i]];
+					}
+				}
+				NSString *amount = [a lastObject];
+				cell.textLabel.text = [NSString stringWithFormat:@"%@    %@",a[0],[numberFormatter stringFromNumber:[NSNumber numberWithFloat:[amount floatValue]]]];
+				
+			}
+			cell.detailTextLabel.text = detail;
+			return cell;
+		}
+	}
+	
 	NSString *url =[self valueFrom:obj key:cellIconURL];
 	if (IS_GOOD(url)) {
 		[cell setURL:url];
@@ -66,7 +99,8 @@
 	NSString *s = [self valueFrom:obj key:cellTitle];
 	if (IS_GOOD(s))
 		cell.textLabel.text = s;
-	else cell.textLabel.text = @"add title key to 'cellTextLabel' value in AbqData.json";
+	else if (cell.textLabel.text.length == 0)
+		cell.textLabel.text = @"add title key to 'cellTextLabel' value in AbqData.json";
 	
 	if ((s = [self valueFrom:obj key:cellDetail1])) {
 		NSString *t = [self valueFrom:obj key:cellDetail2];

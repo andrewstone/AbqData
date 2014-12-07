@@ -34,7 +34,9 @@
   "form" : "dictionary",
   "name" : "Top Paid CABQ Employees",
   "url" : "http:\/\/data.cabq.gov\/government\/top250\/Top250EarnersCABQ2013-en-us.xml",
-  "arrayKey" : "data.row"
+  "arrayKey" : "data.row",
+  "rowKey"  : "value",
+  "cellDetail1" : "cellDetail1"
   }
   
   ]

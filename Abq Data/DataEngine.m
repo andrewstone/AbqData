@@ -60,7 +60,8 @@
 						
 						// Only offered in XML datasets like top 250 paid employees
 						if (!json && [[[response URL]absoluteString] hasSuffix:@"xml"]) {
-							json = [self parseXML:data];
+							json = [[self parseXML:data] copy];
+							jsonError = nil;
 						}
 
 						if (json == nil) {
@@ -93,6 +94,7 @@
 						return;
 					}
 				});
+				return;
 			}
 			// connection failed:
 			dispatch_async(dispatch_get_main_queue(), ^{
