@@ -8,6 +8,8 @@
 
 #import "DataEngine.h"
 #import <UIKit/UIKit.h>
+#import "XMLDictionary.h"
+
 @implementation DataEngine
 
 + (DataEngine *)dataEngine {
@@ -55,6 +57,12 @@
 						// to avoid trouble later, remove NSNull's:
 						json = [self nukeNulls:json];
 						
+						
+						// Only offered in XML datasets like top 250 paid employees
+						if (!json && [[[response URL]absoluteString] hasSuffix:@"xml"]) {
+							json = [self parseXML:data];
+						}
+
 						if (json == nil) {
 							NSString *s = [self stringForData:data response:response];
 							// The page returns <HEAD>stuff url</HEAD>
@@ -68,7 +76,6 @@
 							NSScanner *scan = [NSScanner scannerWithString:s];
 							NSString *value;
 							if ([scan scanUpToString:@";url=" intoString:NULL] && [scan scanString:@";url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
-								NSLog(value);
 								
 								dispatch_async(dispatch_get_main_queue(), ^{
 									
@@ -120,5 +127,13 @@
 	return string;
 }
 
+- (id)parseXML:(NSData *)data {
+	{
+		
+		NSDictionary *d = [[XMLDictionaryParser sharedInstance] dictionaryWithData:data];
+		return d;
+	}
+	return nil;
+}
 
 @end

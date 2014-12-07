@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */; };
+		B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B454717E1A33D0AB008F2B17 /* XMLDictionary.m */; };
 		B45EF8AA1A32403C003A3739 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A81A32403C003A3739 /* .gitignore */; };
 		B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */; };
 		B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */ = {isa = PBXBuildFile; fileRef = B49BBFF11A329BD4000CA48C /* notLoadedArt.png */; };
@@ -38,6 +39,8 @@
 /* Begin PBXFileReference section */
 		B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteImageTableViewCell.h; sourceTree = "<group>"; };
 		B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteImageTableViewCell.m; sourceTree = "<group>"; };
+		B454717D1A33D0AB008F2B17 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
+		B454717E1A33D0AB008F2B17 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		B45EF8A81A32403C003A3739 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = SOURCE_ROOT; };
 		B49BBFF11A329BD4000CA48C /* notLoadedArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notLoadedArt.png; path = images/notLoadedArt.png; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				B4CEA39D1A31510800569F5C /* AppDelegate.m */,
 				B4CEA3C21A31520100569F5C /* DataEngine.h */,
 				B4CEA3C31A31520100569F5C /* DataEngine.m */,
+				B454717D1A33D0AB008F2B17 /* XMLDictionary.h */,
+				B454717E1A33D0AB008F2B17 /* XMLDictionary.m */,
 				B4CEA39F1A31510800569F5C /* MasterViewController.h */,
 				B4CEA3A01A31510800569F5C /* MasterViewController.m */,
 				B4CEA3A21A31510800569F5C /* DetailViewController.h */,
@@ -274,6 +279,7 @@
 				B4CEA3A41A31510800569F5C /* DetailViewController.m in Sources */,
 				B49BBFF71A32CFD0000CA48C /* README.md in Sources */,
 				B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */,
+				B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

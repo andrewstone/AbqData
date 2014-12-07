@@ -17,6 +17,6 @@ extern NSString *const SDWebServiceError;
 - (void)performRequest:(NSString *)requestName completion:(SDUICompletionBlock)completionBlock;
 
 - (void)showError:(NSError *)error;
-
+- (id)parseXML:(NSData *)d;
 
 @end
