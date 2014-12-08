@@ -227,5 +227,34 @@ static NSNumberFormatter *numberFormatter = nil;
 	}
 }
 
+#pragma mark - Helper Methods
+
+// this meth converts Web Mercator (102100/3857) X/Y to WGS84 Geographic (Lat/Long) coordinates
+- (CLLocationCoordinate2D)convertWebMercatorToGeographic:(double)mercX andY:(double)mercY {
+    // handle out of range
+    if (fabs(mercX) < 180 && fabs(mercY) < 90)
+        return kCLLocationCoordinate2DInvalid;
+    // this handles the north and south infinite Mercator conditions
+    if ((fabs(mercX) > 20037508.3427892) || (fabs(mercY) > 20037508.3427892)) {
+        return kCLLocationCoordinate2DInvalid;
+    }
+    
+    // following the math function obtained from ESRI
+    double x = mercX;
+    double y = mercY;
+    double num3 = x / 6378137.0;
+    double num4 = num3 * 57.295779513082323;
+    double num5 = floor((double)((num4 + 180.0) / 360.0));
+    double num6 = num4 - (num5 * 360.0);
+    double num7 = 1.5707963267948966 - (2.0 * atan(exp((-1.0 * y) / 6378137.0)));
+    double num8 = num7 * 57.295779513082323;
+    
+    // set the return
+    CLLocationDegrees lattitude = num6;
+    CLLocationDegrees longitude = num8;
+    CLLocationCoordinate2D geoLocation = CLLocationCoordinate2DMake(lattitude, longitude);
+    return geoLocation;
+}
+
 @end
 
