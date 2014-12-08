@@ -5,6 +5,11 @@
 //  Created by Andrew Stone on 12/4/14.
 //  Copyright (c) 2014 Stone. All rights reserved.
 //
+// Public Art - JSON Dictionary
+// Free WiFi - XML
+// Film Locations - JSON Dictionary
+// Top Paid CABQ Employees - XML
+// Voting Locations - JSON Dictionary
 
 #import "DetailViewController.h"
 #import "DataEngine.h"
@@ -209,9 +214,18 @@ static NSNumberFormatter *numberFormatter = nil;
 	// for example, let's deal with art first:
 	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
 		[self performSegueWithIdentifier:@"ArtCard" sender:d];
-	} else {
+    } else if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Free Wifi"]) {
+        NSLog(@"implement Wifi detail controller!");
+    } else if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Film Locations"]) {
+        NSLog(@"implement Film Locations detail controller!");
+    } else if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Top Paid CABQ Employees"]) {
+        NSLog(@"implement Top Paid CABQ Employees detail controller!");
+    } else if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Voting Locations"]) {
+        NSLog(@"implement Voting Locations detail controller!");
+    } else {
 		NSLog(@"Unhandled detail controller - implement for this style of data!");
 	}
 }
 
 @end
+

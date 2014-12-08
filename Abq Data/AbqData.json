@@ -1,4 +1,4 @@
- [
+[
   {
   "form" : "dictionary",
   "name" : "Public Art",
@@ -10,9 +10,12 @@
   "cellIconURL" : "attributes.JPG_URL"
   },
   {
+  "form" : "dictionary",
   "name" : "Free Wifi",
   "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
-  "form" : "excelxml"
+  "arrayKey" : "data.row",
+  "rowKey"  : "value",
+  "cellDetail1" : "cellDetail1"
   },
   {
   "form" : "dictionary",
@@ -25,18 +28,20 @@
   "cellIconURL" : "attributes.IMDbLink"
   },
   {
-  "form" : "excelxml",
-  "name" : "Pollen History Count",
-  "url" : "http:\/\/data.cabq.gov\/airquality\/pollen\/PollenHistoryCountCABQ-en-us.xml",
-  "arrayKey" : "features"
-  },
-  {
   "form" : "dictionary",
   "name" : "Top Paid CABQ Employees",
   "url" : "http:\/\/data.cabq.gov\/government\/top250\/Top250EarnersCABQ2013-en-us.xml",
   "arrayKey" : "data.row",
   "rowKey"  : "value",
   "cellDetail1" : "cellDetail1"
+  },
+  {
+  "form" : "dictionary",
+  "name" : "Voting Locations",
+  "url" : "http:\/\/data.cabq.gov\/government\/votinglocations\/VotingLocations2013JSON",
+  "arrayKey" : "features",
+  "cellTextLabel" : "attributes.MVCName",
+  "cellDetail1" : "attributes.Address",
+  "cellDetail2" : "attributes.OpenTimes"
   }
-  
-  ]
+]
