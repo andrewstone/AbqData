@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <CoreLocation/CoreLocation.h>
 
 typedef void (^SDUICompletionBlock)(id dataObject, NSError *error);
 
@@ -18,5 +19,6 @@ extern NSString *const SDWebServiceError;
 
 - (void)showError:(NSError *)error;
 - (id)parseXML:(NSData *)d;
+- (CLLocationCoordinate2D)convertWebMercatorToGeographicX:(double)mercX Y:(double)mercY;
 
 @end

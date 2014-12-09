@@ -139,6 +139,31 @@
 	return nil;
 }
 
+#pragma mark - Helper methods
+
+// converts Web Mercator (102100/3857) X/Y to WGS84 Geographic (Lat/Long) coordinates
+- (CLLocationCoordinate2D)convertWebMercatorToGeographicX:(double)mercX Y:(double)mercY {
+    // define earth
+    const double earthRadius = 6378137.0;
+    // handle out of range
+    if (fabs(mercX) < 180 && fabs(mercY) < 90)
+        return kCLLocationCoordinate2DInvalid;
+    // this handles the north and south pole nearing infinite Mercator conditions
+    if ((fabs(mercX) > 20037508.3427892) || (fabs(mercY) > 20037508.3427892)) {
+        return kCLLocationCoordinate2DInvalid;
+    }
+    // math based on ESRI
+    double num1 = (mercX / earthRadius) * 180.0 / M_PI;
+    double num2 = floor(((num1 + 180.0) / 360.0));
+    double num3 = num1 - (num2 * 360.0);
+    double num4 = ((M_PI_2 - (2.0 * atan(exp((-1.0 * mercY) / earthRadius)))) * 180 / M_PI);
+    // set the return
+    CLLocationDegrees lattitude = num3;
+    CLLocationDegrees longitude = num4;
+    CLLocationCoordinate2D geoLocation = CLLocationCoordinate2DMake(lattitude, longitude);
+    return geoLocation;
+}
+
 @end
 
 // Notes: For Chris' reference on SDUICompletionBlock http://stackoverflow.com/questions/23033707/nsoperation-setcompletionblock
