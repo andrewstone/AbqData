@@ -57,7 +57,7 @@
 						// to avoid trouble later, remove NSNull's:
 						json = [self nukeNulls:json];
 						
-                        NSLog(@"1st response: %@", response);
+//                        NSLog(@"1st response: %@", response);
 						
 						// Only offered in XML datasets like top 250 paid employees
                         // note: WiFi spots XML is not being caught here
@@ -74,15 +74,13 @@
 							<meta http-equiv="Refresh"
 							content="20; URL=http://data.cabq.gov/X...Y">
 							*/
-							
-//                            NSLog(@"1st response: %@", s);
-							
+														
 							NSScanner *scan = [NSScanner scannerWithString:s];
 							NSString *value;
 							if ([scan scanUpToString:@";url=" intoString:NULL] && [scan scanString:@";url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
 								
 								dispatch_async(dispatch_get_main_queue(), ^{
-                                    NSLog(@"2nd response: %@", value);
+//                                    NSLog(@"2nd response: %@", value);
 									[[DataEngine dataEngine] performRequest:value completion:completionBlock];
 								});
 								return;

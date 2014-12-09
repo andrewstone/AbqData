@@ -205,8 +205,7 @@ static NSNumberFormatter *numberFormatter = nil;
     // TODO: Delete before shipping this test
     double x = -11873801.891800001;
     double y = 4176540.2707000002;
-    //
-    CLLocationCoordinate2D latLong = [self convertWebMercatorToGeographic:x andY:y];
+    CLLocationCoordinate2D latLong = [self convertWebMercatorToGeographicX:x Y:y];
     NSLog(@"latitude: %f", latLong.latitude);
     NSLog(@"longutude: %f", latLong.longitude);
     
@@ -239,7 +238,7 @@ static NSNumberFormatter *numberFormatter = nil;
 #pragma mark - Helper Methods
 
 // converts Web Mercator (102100/3857) X/Y to WGS84 Geographic (Lat/Long) coordinates
-- (CLLocationCoordinate2D)convertWebMercatorToGeographic:(double)mercX andY:(double)mercY {
+- (CLLocationCoordinate2D)convertWebMercatorToGeographicX:(double)mercX Y:(double)mercY {
     // define earth
     const double earthRadius = 6378137.0;
     // handle out of range
