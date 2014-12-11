@@ -203,11 +203,11 @@ static NSNumberFormatter *numberFormatter = nil;
 	// Do any additional setup after loading the view, typically from a nib.
     
     // TODO: Delete before shipping this test
-//    double x = -11873801.891800001;
-//    double y = 4176540.2707000002;
-//    CLLocationCoordinate2D latLong = [[DataEngine dataEngine] convertWebMercatorToGeographicX:x Y:y];
-//    NSLog(@"latitude: %f", latLong.latitude);
-//    NSLog(@"longutude: %f", latLong.longitude);
+    double x = -11873801.891800001;
+    double y = 4176540.2707000002;
+    CLLocationCoordinate2D latLong = [[DataEngine dataEngine] convertWebMercatorToGeographicX:x Y:y];
+    NSLog(@"latitude: %f", latLong.latitude);
+    NSLog(@"longutude: %f", latLong.longitude);
     
 }
 

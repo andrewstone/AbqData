@@ -139,8 +139,6 @@
 	return nil;
 }
 
-#pragma mark - Helper methods
-
 // converts Web Mercator (102100/3857) X/Y to WGS84 Geographic (Lat/Long) coordinates
 - (CLLocationCoordinate2D)convertWebMercatorToGeographicX:(double)mercX Y:(double)mercY {
     // define earth
@@ -152,7 +150,7 @@
     if ((fabs(mercX) > 20037508.3427892) || (fabs(mercY) > 20037508.3427892)) {
         return kCLLocationCoordinate2DInvalid;
     }
-    // math based on ESRI
+    // math for conversion
     double num1 = (mercX / earthRadius) * 180.0 / M_PI;
     double num2 = floor(((num1 + 180.0) / 360.0));
     double num3 = num1 - (num2 * 360.0);
