@@ -10,12 +10,12 @@
   "cellIconURL" : "attributes.JPG_URL"
   },
   {
+  "datatype" : "excelworksheetxml",
   "form" : "dictionary",
+ "arrayKey" : "data",
   "name" : "Free Wifi",
   "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
-  "arrayKey" : "data.row",
-  "rowKey"  : "value",
-  "cellDetail1" : "cellDetail1"
+  "cellTextLabel" : "name",
   },
   {
   "form" : "dictionary",

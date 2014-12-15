@@ -151,10 +151,10 @@ static NSNumberFormatter *numberFormatter = nil;
 			NSString *form = [self.detailItem valueForKey:@"form"];
 			if ([form isEqualToString:@"dictionary"]) {
 				NSString *key = [self.detailItem valueForKey:@"arrayKey"];
-				NSArray *a;
+				NSArray *a = dataObject;
 				if ([self useKeyPath:key])
 					a = [dataObject valueForKeyPath:key];
-				else
+				else if (key)
 					a = [dataObject valueForKey:key];
 				[self setupTableView:a];
 			} else [self.textView setText:[dataObject description]];
