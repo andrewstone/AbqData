@@ -15,6 +15,10 @@
 #import "DataEngine.h"
 #import "RemoteImageTableViewCell.h"
 #import "ArtCardViewController.h"
+#import "WebViewController.h"
+
+
+
 @interface DetailViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -59,6 +63,7 @@ static NSNumberFormatter *numberFormatter = nil;
 	
 	// select valueForKeyPaths to use depending on the data set (from AbqData.json)
 	NSString *cellIconURL   = [self.detailItem valueForKey:@"cellIconURL"];
+	NSString *cellWebURL   = [self.detailItem valueForKey:@"cellWebURL"];
 	NSString *cellTitle     = [self.detailItem valueForKey:@"cellTextLabel"];
 	NSString *cellDetail1   = [self.detailItem valueForKey:@"cellDetail1"];
 	NSString *cellDetail2   = [self.detailItem valueForKey:@"cellDetail2"];
@@ -151,10 +156,10 @@ static NSNumberFormatter *numberFormatter = nil;
 			NSString *form = [self.detailItem valueForKey:@"form"];
 			if ([form isEqualToString:@"dictionary"]) {
 				NSString *key = [self.detailItem valueForKey:@"arrayKey"];
-				NSArray *a;
+				NSArray *a = dataObject;
 				if ([self useKeyPath:key])
 					a = [dataObject valueForKeyPath:key];
-				else
+				else if (key)
 					a = [dataObject valueForKey:key];
 				[self setupTableView:a];
 			} else [self.textView setText:[dataObject description]];
@@ -211,6 +216,17 @@ static NSNumberFormatter *numberFormatter = nil;
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	NSDictionary *d = self.objects[indexPath.row];
+	NSString *key = [self.detailItem valueForKey:@"cellWebURL"];
+	if (key) {
+		NSString *s = [self valueFrom:d key:key];
+		if (s) {
+			// let's load a web page
+			WebViewController *wc = [[WebViewController alloc] init];
+			wc.urlString = s;
+			[self.navigationController pushViewController:wc animated:YES];
+			return;
+		}
+	}
 	// what you do now depends on kind of data
 	// for example, let's deal with art first:
 	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
