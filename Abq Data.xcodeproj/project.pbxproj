@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2DEF40501A365FA0009BE43E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEF404F1A365FA0009BE43E /* CoreLocation.framework */; };
 		B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */; };
+		B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B408660E1A3FA08E0093CC61 /* WebViewController.m */; };
+		B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B408660F1A3FA08E0093CC61 /* WebViewController.xib */; };
 		B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B454717E1A33D0AB008F2B17 /* XMLDictionary.m */; };
 		B45EF8AA1A32403C003A3739 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A81A32403C003A3739 /* .gitignore */; };
 		B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */; };
@@ -40,6 +42,9 @@
 		2DEF404F1A365FA0009BE43E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteImageTableViewCell.h; sourceTree = "<group>"; };
 		B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteImageTableViewCell.m; sourceTree = "<group>"; };
+		B408660D1A3FA08E0093CC61 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		B408660E1A3FA08E0093CC61 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		B408660F1A3FA08E0093CC61 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		B454717D1A33D0AB008F2B17 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		B454717E1A33D0AB008F2B17 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		B45EF8A81A32403C003A3739 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
@@ -129,6 +134,9 @@
 				B4CEA3A01A31510800569F5C /* MasterViewController.m */,
 				B4CEA3A21A31510800569F5C /* DetailViewController.h */,
 				B4CEA3A31A31510800569F5C /* DetailViewController.m */,
+				B408660D1A3FA08E0093CC61 /* WebViewController.h */,
+				B408660E1A3FA08E0093CC61 /* WebViewController.m */,
+				B408660F1A3FA08E0093CC61 /* WebViewController.xib */,
 				B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */,
 				B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */,
 				B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */,
@@ -253,6 +261,7 @@
 				B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */,
 				B45EF8AA1A32403C003A3739 /* .gitignore in Resources */,
 				B4CEA3A71A31510800569F5C /* Main.storyboard in Resources */,
+				B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */,
 				B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */,
 				B4CEA3AC1A31510800569F5C /* LaunchScreen.xib in Resources */,
 				B4CEA3F21A3213BA00569F5C /* AbqData.json in Resources */,
@@ -278,6 +287,7 @@
 				B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */,
 				B4CEA3C41A31520100569F5C /* DataEngine.m in Sources */,
 				B4CEA3A11A31510800569F5C /* MasterViewController.m in Sources */,
+				B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */,
 				B4CEA39B1A31510800569F5C /* main.m in Sources */,
 				B4CEA3A41A31510800569F5C /* DetailViewController.m in Sources */,
 				B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */,

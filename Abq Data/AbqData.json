@@ -25,7 +25,7 @@
   "cellTextLabel" : "attributes.Title",
   "cellDetail1" : "attributes.Site",
   "cellDetail2" : "attributes.Address",
-  "cellIconURL" : "attributes.IMDbLink"
+  "cellWebURL" : "attributes.IMDbLink"
   },
   {
   "form" : "dictionary",
