@@ -36,6 +36,7 @@
 //}
 - (void)awakeFromNib {
 	[super awakeFromNib];
+	self.title = @"Albuquerque City Data";
 	[self loadJSON];
 	
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
@@ -49,7 +50,7 @@
 	
 	[self loadJSON];
 
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
 //	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //	self.navigationItem.rightBarButtonItem = addButton;

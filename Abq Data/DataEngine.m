@@ -77,38 +77,9 @@
 					 // to avoid trouble later, remove NSNull's:
 					 json = [self nukeNulls:json];
 					 
-					 //                        NSLog(@"1st response: %@", response);
+
 					 
-					 // Only offered in XML datasets like top 250 paid employees
-					 // note: WiFi spots XML is not being caught here
-					 if (!json /*&& [[[response URL]absoluteString] hasSuffix:@"xml"]*/) {
-						 json = [[self parseXML:data] copy];
-						 jsonError = nil;
-						 
-						 // here, we deal with a XML HEAD response and recursively call performRequest:
-						 // this first one comes from Free Wifi:
-						 if ([json isKindOfClass:[NSDictionary class]] && [[json valueForKey:@"__name"]isEqualToString:@"HEAD"]) {
-							 NSString *s = [json valueForKeyPath:@"meta._content"];
-							 NSScanner *scan = [NSScanner scannerWithString:s];
-							 NSString *value;
-							 if ([scan scanUpToString:@"url=" intoString:NULL] && [scan scanString:@"url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
-								 
-								 dispatch_async(dispatch_get_main_queue(), ^{
-									 //                                    NSLog(@"2nd response: %@", value);
-									 [[DataEngine dataEngine] performRequest:value completion:completionBlock];
-								 });
-								 return;
-								 
-							 }
-							 
-						 }
-						 
-						 // OK we have XML - is it a worksheet from EXCEL?
-						 if ([json isKindOfClass:[NSDictionary class]] && [json valueForKey:@"ExcelWorkbook"]!= nil) {
-							 json = [self itemsFromExcelXML:json];
-						 }
-					 }
-					 
+					 // one last change to see if this is a redirect:
 					 if (json == nil) {
 						 NSString *s = [self stringForData:data response:response];
 						 // The page returns <HEAD>stuff url</HEAD>
@@ -129,9 +100,43 @@
 							 return;
 							 
 						 }
+
+					 
+					 // Only offered in XML datasets like top 250 paid employees
+					 // note: WiFi spots XML is not being caught here
+					 if (!json) {
+						 json = [[self parseXML:data] copy];
+						 jsonError = nil;
 						 
+						 // here, we deal with a XML HEAD response and recursively call performRequest:
+						 // this first one comes from Free Wifi:
+						 NSString *s = nil;
+						 if ([json isKindOfClass:[NSDictionary class]] && [[json valueForKey:@"__name"]isEqualToString:@"HEAD"] && (s = [json valueForKeyPath:@"meta._content"])!= nil) {
+							 ;
+							 NSScanner *scan = [NSScanner scannerWithString:s];
+							 NSString *value;
+							 if ([scan scanUpToString:@"url=" intoString:NULL] && [scan scanString:@"url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
+								 
+								 dispatch_async(dispatch_get_main_queue(), ^{
+									 //                                    NSLog(@"2nd response: %@", value);
+									 [[DataEngine dataEngine] performRequest:value completion:completionBlock];
+								 });
+								 return;
+								 
+							 }
+							 
+						 }
+						 
+						 // OK we have XML - is it a worksheet from EXCEL?
+						 if ([json isKindOfClass:[NSDictionary class]] && [json valueForKey:@"ExcelWorkbook"]!= nil) {
+							 json = [self itemsFromExcelXML:json];
+						 }
 					 }
 					 
+					 
+					 }
+					 
+					 // actually this method is quite simple - just call the block!
 					 dispatch_async(dispatch_get_main_queue(), ^{
 						 completionBlock(json,jsonError);
 					 });
