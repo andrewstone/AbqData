@@ -2,6 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The location service is used only to retrieve information specific to your location.  It is not necessary to use location services for the app to function.
+The location service is used only to retrieve information specific to your location.  It is not necessary to use location services for the app to function.
+The location service is used only to retrieve information specific to your location.  It is not necessary to use location services for the app to function.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>The location service is used briefly to find services and locations near you</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

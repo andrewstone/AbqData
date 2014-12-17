@@ -210,6 +210,98 @@
     return geoLocation;
 }
 
+#pragma mark - CLLocationManagerDelegates
+
+// didUpdateToLocation is deprecated, replaced with didUpdateToLocations with an array
+- (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    // get last location from array
+    CLLocation *newLocation = [locations lastObject];
+    self.currentLocation = newLocation;
+    // if accurate enough, stop
+    if(newLocation.horizontalAccuracy <= 1000.0f){
+        [self.locationManager stopUpdatingLocation];
+    }
+    
+    NSLog(@"didUpdateLocations: %@", self.currentLocation);
+    
+}
+
+// failed to get location.  Alert the user.
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
+{
+    NSLog(@"Location Manager didFailWithError: %@", error);
+}
+
+#pragma mark - Location Helper Methods
+
+// location manager authorization status check
+- (BOOL)checkLocationManagerAuthorizationStatus {
+    // check first if hardware supports
+    if ([CLLocationManager locationServicesEnabled]) {
+        //        NSLog(@"checkLocationManagerAuthorizationStatus: locationServicesEnabled: TRUE");
+        // Check user's authorization status for this service.  kCLAuthorizationStatusAuthorized was deprecated in iOS 8 (xCode 6).  Replaced with StatusDenied instead.
+        if (([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted)) {
+            return FALSE;
+        } else {
+            return TRUE;
+        }
+        
+    } else {
+        NSLog(@"checkLocationManagerAuthorizationStatus: locationServicesEnabled: FALSE");
+    }
+    return FALSE;
+}
+
+// activate or deactivate location service
+- (void)determineLocation:(BOOL)activated {
+    
+    if (activated) {
+        // check if user disabled the service
+        if (([CLLocationManager authorizationStatus] == kCLAuthorizationStatusDenied) || ([CLLocationManager authorizationStatus] == kCLAuthorizationStatusRestricted)) {
+            NSLog(@"Location Service Denied");
+            self.locationManagerActive = NO;
+            return;
+        }
+        
+        // check device capability before alloc/init which can cause exception if device not capable
+        if (![CLLocationManager locationServicesEnabled]) {
+            NSLog(@"Location Service Disabled");
+            self.locationManagerActive = NO;
+            
+        } else {
+            
+            // let's activate, but first check if it's already active
+            // TODO: Instead of using boolen, consider checking the device status directly
+            if (self.locationManager) {
+                // already allocated and initialized, just activate
+                [self.locationManager startMonitoringSignificantLocationChanges];
+                
+            } else {
+                // Initial creation of locationManager object and startMonitoring
+                self.locationManager = [[CLLocationManager alloc] init];
+                self.locationManager.delegate = self;
+                self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+                self.locationManager.distanceFilter = kCLDistanceFilterNone;
+                [self.locationManager startUpdatingLocation];
+            }
+            
+            self.locationManagerActive = YES;
+        }
+        
+    } else {
+        // shut her down
+        if ([CLLocationManager locationServicesEnabled]) {
+            
+            if (self.locationManager) {
+                [self.locationManager stopUpdatingLocation];
+                self.locationManagerActive = NO;
+                self.locationManager = nil;
+            }
+        }
+    }
+}
+
+
 @end
 
 // Notes: For Chris' reference on SDUICompletionBlock http://stackoverflow.com/questions/23033707/nsoperation-setcompletionblock

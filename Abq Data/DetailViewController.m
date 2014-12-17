@@ -205,7 +205,15 @@ static NSNumberFormatter *numberFormatter = nil;
 }
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    // TODO: Remove this location testing code block before shipping
+    BOOL deviceReadyForLocation = [[DataEngine dataEngine] checkLocationManagerAuthorizationStatus];
+    if (deviceReadyForLocation) {
+        NSLog(@"device ready to determine location");
+        [[DataEngine dataEngine] determineLocation:YES];
+    } else {
+        NSLog(@"device not supporting location service right now, try again Tuesday");
+    }
     
 }
 
