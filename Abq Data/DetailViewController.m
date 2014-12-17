@@ -214,7 +214,6 @@ static NSNumberFormatter *numberFormatter = nil;
     } else {
         NSLog(@"device not supporting location service right now, try again Tuesday");
     }
-    
 }
 
 - (void)didReceiveMemoryWarning {
