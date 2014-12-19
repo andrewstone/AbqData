@@ -18,5 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *indicator;
 @property (strong, nonatomic) NSArray *objects;
 
+- (IBAction)loadMap:(id)sender;
+
 @end
 

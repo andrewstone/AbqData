@@ -233,7 +233,7 @@
 }
 
 #pragma mark - Location Helper Methods
-
+// [CLLocationManager requestWhenInUseAuthorization]
 // location manager authorization status check
 - (BOOL)checkLocationManagerAuthorizationStatus {
     // check first if hardware supports
@@ -279,6 +279,9 @@
             } else {
                 // Initial creation of locationManager object and startMonitoring
                 self.locationManager = [[CLLocationManager alloc] init];
+				// iOS 8 requires this
+				if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+					[self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
                 self.locationManager.delegate = self;
                 self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
                 self.locationManager.distanceFilter = kCLDistanceFilterNone;

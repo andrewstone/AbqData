@@ -16,7 +16,7 @@
 #import "RemoteImageTableViewCell.h"
 #import "ArtCardViewController.h"
 #import "WebViewController.h"
-
+#import "MapViewController.h"
 
 
 @interface DetailViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -203,9 +203,19 @@ static NSNumberFormatter *numberFormatter = nil;
 		ac.artistDictionary = sender;
 	}
 }
+
+- (IBAction)loadMap:(id)sender {
+	// Segues are still foreign to me - here's what's underneath
+	MapViewController *mvc = [[MapViewController alloc] init];
+	mvc.detailItem = self.detailItem;
+	mvc.items = self.objects;
+	
+	[self.navigationController pushViewController:mvc animated:YES];
+}
 - (void)viewDidLoad {
 	[super viewDidLoad];
-    
+	
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(loadMap:)];
     // TODO: Remove this location testing code block before shipping
     BOOL deviceReadyForLocation = [[DataEngine dataEngine] checkLocationManagerAuthorizationStatus];
     if (deviceReadyForLocation) {
