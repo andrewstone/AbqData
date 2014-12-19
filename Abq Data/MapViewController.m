@@ -35,6 +35,17 @@
 
 - (CLLocationCoordinate2D )coordFromDictionary:(NSDictionary *)dict {
 	
+	// here's one native implementation when given lat long directly:
+	NSDictionary *d = [dict valueForKey:@"latlong"];
+	if (d) {
+		CLLocationCoordinate2D coord;
+		coord.latitude = [[d valueForKey:@"latitude"] doubleValue];
+		coord.longitude = [[d valueForKey:@"longitude"] doubleValue];
+		return coord;
+	}
+	
+	// here's sucking on the Mercator straw:
+	
 	CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(35.1107, -106.61); // backstop
  NSDictionary *geo = [dict valueForKey:@"geometry"];
 	
