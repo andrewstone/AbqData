@@ -91,7 +91,7 @@
 						 
 						 NSScanner *scan = [NSScanner scannerWithString:s];
 						 NSString *value;
-						 if ([scan scanUpToString:@";url=" intoString:NULL] && [scan scanString:@";url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
+						 if ([scan scanUpToString:@"url=" intoString:NULL] && [scan scanString:@"url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
 							 
 							 dispatch_async(dispatch_get_main_queue(), ^{
 								 //                                    NSLog(@"2nd response: %@", value);
