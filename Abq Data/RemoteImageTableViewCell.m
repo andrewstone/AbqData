@@ -29,9 +29,32 @@ static NSCache *cache;
 	return _url;
 }
 
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView {
+	CGRect r = webView.frame;
+	CGRect sr = [webView superview].bounds;
+
+}
+
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+	
+}
+
+
 - (void)setURL:(NSString *)path {
 	_url = [path copy];
-
+	_displaysOnlyInWebView = [path hasPrefix:@"http://www.flickr.com"];
+	if (self.displaysOnlyInWebView) {
+		if (!self.webView) {
+			self.webView = [[UIWebView alloc] initWithFrame:self.contentView.bounds];
+			[self.contentView addSubview:self.webView];
+			self.webView.delegate = self;
+		}
+		[self.webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:_url]]];
+		
+		return;
+	}
+	
 	UIImage *cached = [cache objectForKey:_url];
 
 	self.imageView.image = cached ? cached :[UIImage imageNamed:@"notLoadedArt"];

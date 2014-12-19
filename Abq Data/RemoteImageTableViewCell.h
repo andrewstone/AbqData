@@ -10,6 +10,9 @@
 
 @interface RemoteImageTableViewCell : UITableViewCell
 //@property (nonatomic, strong) NSString *url;
+@property (nonatomic, readonly)BOOL displaysOnlyInWebView;
+@property (nonatomic, strong)UIWebView *webView;
+
 - (void)setURL:(NSString *)url;
 - (NSString *)url;
 @end
