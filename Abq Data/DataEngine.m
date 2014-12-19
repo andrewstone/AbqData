@@ -48,6 +48,13 @@
 			NSArray *cell = [d valueForKey:@"Cell"];
 			NSDictionary *data = [[cell objectAtIndex:0] valueForKey:@"Data"];
 			[newDict setObject:[data valueForKey:@"__text"] forKey:@"name"];
+			NSDictionary *latDict = [[cell objectAtIndex:3] valueForKey:@"Data"];
+			NSDictionary *longDict = [[cell objectAtIndex:4] valueForKey:@"Data"];
+			double lattitude = [[latDict valueForKey:@"__text"] doubleValue];
+			double longitude = [[longDict valueForKey:@"__text"] doubleValue];
+			NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithObjects:@[[NSNumber numberWithDouble:lattitude],[NSNumber numberWithDouble:longitude] ] forKeys:@[@"latitude",@"longitude"]];
+			[newDict setObject:dict forKey:@"latlong"];
+			
 		}
 		return [NSDictionary dictionaryWithObject:actual forKey:@"data"];
 	}
@@ -91,7 +98,7 @@
 						 
 						 NSScanner *scan = [NSScanner scannerWithString:s];
 						 NSString *value;
-						 if ([scan scanUpToString:@";url=" intoString:NULL] && [scan scanString:@";url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
+						 if ([scan scanUpToString:@"url=" intoString:NULL] && [scan scanString:@"url=" intoString:NULL]&& [scan scanUpToString:@"\">" intoString:&value]) {
 							 
 							 dispatch_async(dispatch_get_main_queue(), ^{
 								 //                                    NSLog(@"2nd response: %@", value);
@@ -229,7 +236,7 @@
 }
 
 #pragma mark - Location Helper Methods
-
+// [CLLocationManager requestWhenInUseAuthorization]
 // location manager authorization status check
 - (BOOL)checkLocationManagerAuthorizationStatus {
     // check first if hardware supports

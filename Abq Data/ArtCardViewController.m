@@ -36,7 +36,6 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	// NOT DONE
     return 2;
 }
 /*
@@ -87,25 +86,15 @@
 		RemoteImageTableViewCell *c = [tableView dequeueReusableCellWithIdentifier:@"ImageCell" forIndexPath:indexPath];
 		
 		NSString *url = [self.artistDictionary valueForKeyPath:@"attributes.IMAGE_URL"];
-		if (url) {
-			if([url hasPrefix:@"http://www.flickr.com"]) {
-				UITableViewCell *wc = [tableView dequeueReusableCellWithIdentifier:@"WebCell" forIndexPath:indexPath];
-				UIWebView *web = wc.contentView.subviews[0];
-				if ([web isKindOfClass:[UIWebView class]]) {
-					[web loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:url]]];
-				}
-				return wc;
-			}
-			
 		[c setURL:url];
 		return c;
-		}
 	}
 	
     // Configure the cell...
     
     return nil;
 }
+
 
 /*
 // Override to support conditional editing of the table view.

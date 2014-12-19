@@ -35,13 +35,23 @@
   "rowKey"  : "value",
   "cellDetail1" : "cellDetail1"
   },
-  {
-  "form" : "dictionary",
-  "name" : "Voting Locations",
-  "url" : "http:\/\/data.cabq.gov\/government\/votinglocations\/VotingLocations2013JSON",
-  "arrayKey" : "features",
-  "cellTextLabel" : "attributes.MVCName",
-  "cellDetail1" : "attributes.Address",
-  "cellDetail2" : "attributes.OpenTimes"
-  }
+ {
+ "form" : "dictionary",
+ "name" : "Voting Locations",
+ "url" : "http:\/\/data.cabq.gov\/government\/votinglocations\/VotingLocations2013JSON",
+ "arrayKey" : "features",
+ "cellTextLabel" : "attributes.MVCName",
+ "cellDetail1" : "attributes.Address",
+ "cellDetail2" : "attributes.OpenTimes"
+ },
+ {
+ "form" : "dictionary",
+ "name" : "DMD Projects",
+ "url" : "http:\/\/data.cabq.gov\/government\/dmdprojects\/dmdprojectsactiveJSON_ALL",
+ "arrayKey" : "features",
+ "cellTextLabel" : "attributes.PROJECTNAME",
+ "cellDetail1" : "attributes.DESCRIPTION"
+ }
+ 
+ 
 ]
