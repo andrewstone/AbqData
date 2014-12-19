@@ -211,8 +211,8 @@
     double num3 = num1 - (num2 * 360.0);
     double num4 = ((M_PI_2 - (2.0 * atan(exp((-1.0 * mercY) / earthRadius)))) * 180 / M_PI);
     // set the return
-    CLLocationDegrees lattitude = num3;
-    CLLocationDegrees longitude = num4;
+    CLLocationDegrees lattitude = num4;
+    CLLocationDegrees longitude = num3;
     CLLocationCoordinate2D geoLocation = CLLocationCoordinate2DMake(lattitude, longitude);
     return geoLocation;
 }
