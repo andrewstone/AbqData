@@ -279,11 +279,9 @@
                 
                 // Initial creation of locationManager object and startMonitoring
                 self.locationManager = [[CLLocationManager alloc] init];
-                // iOS code to request authorization with plist message
-                if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)]) {
-                    NSLog(@"requestWhenInUseAuthorization)");
-                    [self.locationManager requestWhenInUseAuthorization];
-                }
+				// iOS 8 requires this
+				if ([self.locationManager respondsToSelector:@selector(requestWhenInUseAuthorization)])
+					[self.locationManager performSelector:@selector(requestWhenInUseAuthorization)];
                 self.locationManager.delegate = self;
                 self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
                 self.locationManager.distanceFilter = kCLDistanceFilterNone;
