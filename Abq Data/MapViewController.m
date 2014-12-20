@@ -61,15 +61,31 @@
 		}
 	}
 	
+	if (geo) {
+		NSNumber *x = [geo valueForKey:@"x"];
+		NSNumber *y = [geo valueForKey:@"y"];
+		coord = [[DataEngine dataEngine] convertWebMercatorToGeographicX:[x doubleValue] Y:[y doubleValue]];
+		
+	}
 	return coord;
 }
 
 - (NSString *)nameFromDictionary:(NSDictionary *)d {
+	if ([d valueForKeyPath:@"attributes.Title"])
+		return [d valueForKey:@"attributes.Title"];
+	
 	return [d description];
 }
+
 - (NSString *)subTitleFromDictionary:(NSDictionary *)d {
+	
+	if ([d valueForKey:@"attributes.Address"])
+		return [d valueForKey:@"attibutes.Address"];
+	
+	// generalize later Chris J
 	return [d description];
 }
+
 - (NSArray *)annotations {
 	NSMutableArray *a = [NSMutableArray array];
 	for (int i = 0; i < self.items.count; i++) {
@@ -90,9 +106,10 @@
 	[self.mapView setRegion:MKCoordinateRegionMake(_mapCoordinate, MKCoordinateSpanMake(0.2, 0.2))];
 	//add annotations:
 	dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+		NSArray *annotations = [self annotations];
+		[self.mapView addAnnotations:annotations];
 		
-		[self.mapView addAnnotations:[self annotations]];
-		[self.mapView showAnnotations:[self annotations] animated:YES];
+//		[self.mapView showAnnotations:annotations animated:YES];
 	});
 }
 

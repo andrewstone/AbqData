@@ -51,7 +51,23 @@
  "arrayKey" : "features",
  "cellTextLabel" : "attributes.PROJECTNAME",
  "cellDetail1" : "attributes.DESCRIPTION"
+ },
+ {
+ "form" : "dictionary",
+ "name" : "Ungraded Employees Salary",
+ "url" : "http:\/\/data.cabq.gov\/government\/ungraded\/UngradedEmployeeEarningsCABQ-en-us.xml",
+ "arrayKey" : "data.row",
+ "rowKey"  : "value",
+ "cellDetail1" : "cellDetail1"
  }
- 
+ ,
+ {
+ "form" : "dictionary",
+ "name" : "Graded Employees Salary",
+ "url" : "http:\/\/data.cabq.gov\/government\/graded\/GradedEmployeeEarningsCABQ-en-us.xml",
+ "arrayKey" : "data.row",
+ "rowKey"  : "value",
+ "cellDetail1" : "cellDetail1"
+ }
  
 ]

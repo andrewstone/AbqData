@@ -93,6 +93,9 @@ static NSNumberFormatter *numberFormatter = nil;
 					}
 				}
 				NSString *amount = [a lastObject];
+				if ([amount floatValue] == 0)
+					amount = [a objectAtIndex:a.count -3];
+				
 				cell.textLabel.text = [NSString stringWithFormat:@"%@    %@",a[0],[numberFormatter stringFromNumber:[NSNumber numberWithFloat:[amount floatValue]]]];
 				
 			}
