@@ -10,6 +10,8 @@
 #import <UIKit/UIKit.h>
 #import "XMLDictionary.h"
 
+NSString *CoreLocationUpdatedNotification = @"CoreLocationUpdatedNotification";
+
 @implementation DataEngine
 
 + (DataEngine *)dataEngine {
@@ -227,6 +229,9 @@
     // stop updating
     [self.locationManager stopUpdatingLocation];
     NSLog(@"didUpdateLocations: %@", self.currentLocation);
+    // notify any observers, Earthly or otherwise
+    [[NSNotificationCenter defaultCenter] postNotificationName: CoreLocationUpdatedNotification object:newLocation];
+    
 }
 
 // failed to get location.  Alert the user.

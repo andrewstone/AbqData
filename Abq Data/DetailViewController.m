@@ -219,14 +219,19 @@ static NSNumberFormatter *numberFormatter = nil;
 	[super viewDidLoad];
 	
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Map" style:UIBarButtonItemStylePlain target:self action:@selector(loadMap:)];
+    
     // TODO: Remove this location testing code block before shipping
     BOOL deviceReadyForLocation = [[DataEngine dataEngine] checkLocationManagerAuthorizationStatus];
     if (deviceReadyForLocation) {
         NSLog(@"device ready to determine location");
         [[DataEngine dataEngine] determineLocation:YES];
     } else {
-        NSLog(@"device not supporting location service right now, try again Tuesday");
+        NSLog(@"device not playing nice with location service, try again Tuesday");
     }
+
+    // observer for location updates
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handlerForLocationHasChanged:) name:CoreLocationUpdatedNotification object:nil];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -264,6 +269,17 @@ static NSNumberFormatter *numberFormatter = nil;
 	}
 }
 
+#pragma mark - Selector handlers
+
+- (void)handlerForLocationHasChanged:(NSString *)location {
+    
+    NSLog(@"handlerForLcationHasChanged: %@", location);
+    
+//    NSValue *value = [note object];
+//    CGPoint point = [value pointValue];
+//    (or store it as doubles if it's a double...)
+    
+}
 
 
 @end

@@ -12,6 +12,7 @@
 typedef void (^SDUICompletionBlock)(id dataObject, NSError *error);
 
 extern NSString *const SDWebServiceError;
+extern NSString *CoreLocationUpdatedNotification;
 
 @interface DataEngine : NSObject <CLLocationManagerDelegate>
 
