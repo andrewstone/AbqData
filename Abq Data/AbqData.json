@@ -16,6 +16,8 @@
   "name" : "Free Wifi",
   "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
   "cellTextLabel" : "name",
+ "cellDetail1" : "ADDRESS",
+
   },
   {
   "form" : "dictionary",
