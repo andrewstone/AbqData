@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RemoteImageTableViewCell : UITableViewCell
+@interface RemoteImageTableViewCell : UITableViewCell <UIWebViewDelegate>
 //@property (nonatomic, strong) NSString *url;
 @property (nonatomic, readonly)BOOL displaysOnlyInWebView;
 @property (nonatomic, strong)UIWebView *webView;

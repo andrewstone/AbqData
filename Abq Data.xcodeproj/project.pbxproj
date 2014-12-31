@@ -7,12 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2DEF40501A365FA0009BE43E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DEF404F1A365FA0009BE43E /* CoreLocation.framework */; };
 		B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */; };
 		B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B408660E1A3FA08E0093CC61 /* WebViewController.m */; };
 		B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B408660F1A3FA08E0093CC61 /* WebViewController.xib */; };
 		B40866151A3FA4230093CC61 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40866131A3FA4230093CC61 /* MapViewController.m */; };
 		B40866161A3FA4230093CC61 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40866141A3FA4230093CC61 /* MapViewController.xib */; };
+		B452FD591A52FD160033CCB1 /* KMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B452FD561A52FD160033CCB1 /* KMLParser.m */; };
+		B452FD5A1A52FD160033CCB1 /* KMLViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B452FD581A52FD160033CCB1 /* KMLViewerViewController.m */; };
 		B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B454717E1A33D0AB008F2B17 /* XMLDictionary.m */; };
 		B45EF8AA1A32403C003A3739 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A81A32403C003A3739 /* .gitignore */; };
 		B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */; };
@@ -41,7 +42,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2DEF404F1A365FA0009BE43E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteImageTableViewCell.h; sourceTree = "<group>"; };
 		B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteImageTableViewCell.m; sourceTree = "<group>"; };
 		B408660D1A3FA08E0093CC61 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -50,6 +50,10 @@
 		B40866121A3FA4230093CC61 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		B40866131A3FA4230093CC61 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		B40866141A3FA4230093CC61 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		B452FD551A52FD160033CCB1 /* KMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLParser.h; sourceTree = "<group>"; };
+		B452FD561A52FD160033CCB1 /* KMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLParser.m; sourceTree = "<group>"; };
+		B452FD571A52FD160033CCB1 /* KMLViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLViewerViewController.h; sourceTree = "<group>"; };
+		B452FD581A52FD160033CCB1 /* KMLViewerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLViewerViewController.m; sourceTree = "<group>"; };
 		B454717D1A33D0AB008F2B17 /* XMLDictionary.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLDictionary.h; sourceTree = "<group>"; };
 		B454717E1A33D0AB008F2B17 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		B45EF8A81A32403C003A3739 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
@@ -75,7 +79,7 @@
 		B4CEA3B71A31510800569F5C /* Abq_DataTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Abq_DataTests.m; sourceTree = "<group>"; };
 		B4CEA3C21A31520100569F5C /* DataEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEngine.h; sourceTree = "<group>"; };
 		B4CEA3C31A31520100569F5C /* DataEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEngine.m; sourceTree = "<group>"; };
-		B4CEA3F11A3213BA00569F5C /* AbqData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = AbqData.json; path = "Abq Data/AbqData.json"; sourceTree = "<group>"; };
+		B4CEA3F11A3213BA00569F5C /* AbqData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = AbqData.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,7 +87,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2DEF40501A365FA0009BE43E /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,9 +100,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B452FD531A52FCB60033CCB1 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				B4CEA3A51A31510800569F5C /* Main.storyboard */,
+				B408660F1A3FA08E0093CC61 /* WebViewController.xib */,
+				B40866141A3FA4230093CC61 /* MapViewController.xib */,
+				B4CEA3AA1A31510800569F5C /* LaunchScreen.xib */,
+				B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */,
+				B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */,
+				B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		B452FD541A52FCEB0033CCB1 /* Maps */ = {
+			isa = PBXGroup;
+			children = (
+				B40866121A3FA4230093CC61 /* MapViewController.h */,
+				B40866131A3FA4230093CC61 /* MapViewController.m */,
+				B452FD551A52FD160033CCB1 /* KMLParser.h */,
+				B452FD561A52FD160033CCB1 /* KMLParser.m */,
+				B452FD571A52FD160033CCB1 /* KMLViewerViewController.h */,
+				B452FD581A52FD160033CCB1 /* KMLViewerViewController.m */,
+			);
+			name = Maps;
+			sourceTree = "<group>";
+		};
+		B452FD5B1A52FD620033CCB1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4CEA39F1A31510800569F5C /* MasterViewController.h */,
+				B4CEA3A01A31510800569F5C /* MasterViewController.m */,
+				B4CEA3A21A31510800569F5C /* DetailViewController.h */,
+				B4CEA3A31A31510800569F5C /* DetailViewController.m */,
+				B408660D1A3FA08E0093CC61 /* WebViewController.h */,
+				B408660E1A3FA08E0093CC61 /* WebViewController.m */,
+				B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */,
+				B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		B452FD5C1A52FDB40033CCB1 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				B4CEA3F11A3213BA00569F5C /* AbqData.json */,
+				B4CEA3C21A31520100569F5C /* DataEngine.h */,
+				B4CEA3C31A31520100569F5C /* DataEngine.m */,
+				B4CEA39C1A31510800569F5C /* AppDelegate.h */,
+				B4CEA39D1A31510800569F5C /* AppDelegate.m */,
+				B454717D1A33D0AB008F2B17 /* XMLDictionary.h */,
+				B454717E1A33D0AB008F2B17 /* XMLDictionary.m */,
+			);
+			name = Engine;
+			sourceTree = "<group>";
+		};
 		B49BBFF01A329BC8000CA48C /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B4CEA3A81A31510800569F5C /* Images.xcassets */,
 				B49BBFF11A329BD4000CA48C /* notLoadedArt.png */,
 			);
 			name = Images;
@@ -108,9 +168,7 @@
 		B4CEA38C1A31510800569F5C = {
 			isa = PBXGroup;
 			children = (
-				2DEF404F1A365FA0009BE43E /* CoreLocation.framework */,
 				B49BBFF61A32CFD0000CA48C /* README.md */,
-				B4CEA3F11A3213BA00569F5C /* AbqData.json */,
 				B4CEA3971A31510800569F5C /* Abq Data */,
 				B4CEA3B41A31510800569F5C /* Abq DataTests */,
 				B4CEA3961A31510800569F5C /* Products */,
@@ -129,30 +187,10 @@
 		B4CEA3971A31510800569F5C /* Abq Data */ = {
 			isa = PBXGroup;
 			children = (
-				B4CEA39C1A31510800569F5C /* AppDelegate.h */,
-				B4CEA39D1A31510800569F5C /* AppDelegate.m */,
-				B4CEA3C21A31520100569F5C /* DataEngine.h */,
-				B4CEA3C31A31520100569F5C /* DataEngine.m */,
-				B454717D1A33D0AB008F2B17 /* XMLDictionary.h */,
-				B454717E1A33D0AB008F2B17 /* XMLDictionary.m */,
-				B4CEA39F1A31510800569F5C /* MasterViewController.h */,
-				B4CEA3A01A31510800569F5C /* MasterViewController.m */,
-				B4CEA3A21A31510800569F5C /* DetailViewController.h */,
-				B4CEA3A31A31510800569F5C /* DetailViewController.m */,
-				B408660D1A3FA08E0093CC61 /* WebViewController.h */,
-				B408660E1A3FA08E0093CC61 /* WebViewController.m */,
-				B408660F1A3FA08E0093CC61 /* WebViewController.xib */,
-				B40866121A3FA4230093CC61 /* MapViewController.h */,
-				B40866131A3FA4230093CC61 /* MapViewController.m */,
-				B40866141A3FA4230093CC61 /* MapViewController.xib */,
-				B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */,
-				B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */,
-				B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */,
-				B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */,
-				B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */,
-				B4CEA3A51A31510800569F5C /* Main.storyboard */,
-				B4CEA3A81A31510800569F5C /* Images.xcassets */,
-				B4CEA3AA1A31510800569F5C /* LaunchScreen.xib */,
+				B452FD5C1A52FDB40033CCB1 /* Engine */,
+				B452FD531A52FCB60033CCB1 /* UI */,
+				B452FD5B1A52FD620033CCB1 /* Controllers */,
+				B452FD541A52FCEB0033CCB1 /* Maps */,
 				B49BBFF01A329BC8000CA48C /* Images */,
 				B4CEA3981A31510800569F5C /* Supporting Files */,
 			);
@@ -299,7 +337,9 @@
 				B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */,
 				B4CEA39B1A31510800569F5C /* main.m in Sources */,
 				B4CEA3A41A31510800569F5C /* DetailViewController.m in Sources */,
+				B452FD591A52FD160033CCB1 /* KMLParser.m in Sources */,
 				B40866151A3FA4230093CC61 /* MapViewController.m in Sources */,
+				B452FD5A1A52FD160033CCB1 /* KMLViewerViewController.m in Sources */,
 				B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */,
 				B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */,
 			);

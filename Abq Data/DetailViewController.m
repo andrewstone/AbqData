@@ -63,7 +63,7 @@ static NSNumberFormatter *numberFormatter = nil;
 	
 	// select valueForKeyPaths to use depending on the data set (from AbqData.json)
 	NSString *cellIconURL   = [self.detailItem valueForKey:@"cellIconURL"];
-	NSString *cellWebURL   = [self.detailItem valueForKey:@"cellWebURL"];
+//	NSString *cellWebURL   = [self.detailItem valueForKey:@"cellWebURL"];
 	NSString *cellTitle     = [self.detailItem valueForKey:@"cellTextLabel"];
 	NSString *cellDetail1   = [self.detailItem valueForKey:@"cellDetail1"];
 	NSString *cellDetail2   = [self.detailItem valueForKey:@"cellDetail2"];
@@ -211,7 +211,7 @@ static NSNumberFormatter *numberFormatter = nil;
 	// Segues are still foreign to me - here's what's underneath
 	MapViewController *mvc = [[MapViewController alloc] init];
 	mvc.detailItem = self.detailItem;
-	mvc.items = self.objects;
+	mvc.items = [NSMutableArray arrayWithArray:self.objects];
 	
 	[self.navigationController pushViewController:mvc animated:YES];
 }
