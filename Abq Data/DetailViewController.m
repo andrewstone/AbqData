@@ -271,6 +271,9 @@ static NSNumberFormatter *numberFormatter = nil;
 	}
 }
 
+- (void)decompressAndLoadKMZ:(NSData *)data {
+	
+}
 #pragma mark - Selector handlers
 
 - (void)handlerForLocationHasChanged:(NSString *)location {
