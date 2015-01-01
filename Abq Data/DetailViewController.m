@@ -157,7 +157,9 @@ static NSNumberFormatter *numberFormatter = nil;
 	[[DataEngine dataEngine] performRequest:url completion:^(id dataObject, NSError *error) {
 		if (error == nil) {
 			NSString *form = [self.detailItem valueForKey:@"form"];
-			if ([form isEqualToString:@"dictionary"]) {
+			if ([form isEqualToString:@"kmz"]) {
+				[self decompressAndLoadKMZ:dataObject];
+			} else if ([form isEqualToString:@"dictionary"]) {
 				NSString *key = [self.detailItem valueForKey:@"arrayKey"];
 				NSArray *a = dataObject;
 				if ([self useKeyPath:key])
@@ -265,7 +267,9 @@ static NSNumberFormatter *numberFormatter = nil;
 	}
 }
 
-
+- (void)decompressAndLoadKMZ:(NSData *)data {
+	
+}
 
 @end
 

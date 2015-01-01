@@ -82,12 +82,17 @@
 			 dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
 				 if (response.statusCode < 400) {
 					 NSError *jsonError = nil;
-					 id json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves						error:&jsonError];
+					 id json = nil;
 					 
-					 // to avoid trouble later, remove NSNull's:
-					 json = [self nukeNulls:json];
+					 if ([[[response URL]absoluteString]hasSuffix:@"kmz"]) {
+						 json = data; // we'll parse later
+					 } else {
+						 json = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments | NSJSONReadingMutableContainers | NSJSONReadingMutableLeaves						error:&jsonError];
+						 
+						 // to avoid trouble later, remove NSNull's:
+						 json = [self nukeNulls:json];
 					 
-
+					 }
 					 
 					 // one last change to see if this is a redirect:
 					 if (json == nil) {
@@ -142,7 +147,7 @@
 							 json = [self itemsFromExcelXML:json];
 						 }
 					 }
-					 
+						 
 					 
 					 }
 					 

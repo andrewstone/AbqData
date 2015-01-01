@@ -81,5 +81,11 @@
  "cellDetail1" : "attributes.Site",
  "cellDetail2" : "attributes.Address"
  }
+ ,
+ {
+ "form" : "kmz",
+ "name" : "City Open Space",
+ "url" : "http:\/\/data.cabq.gov\/community\/openspace\/CityOpenSpace.kmz"
+ }
  
 ]
