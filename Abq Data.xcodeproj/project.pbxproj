@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D42E5CD1A5605F700335BE7 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D42E5CC1A5605F700335BE7 /* libz.1.2.5.dylib */; };
 		B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */; };
 		B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B408660E1A3FA08E0093CC61 /* WebViewController.m */; };
 		B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B408660F1A3FA08E0093CC61 /* WebViewController.xib */; };
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2D42E5CC1A5605F700335BE7 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteImageTableViewCell.h; sourceTree = "<group>"; };
 		B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteImageTableViewCell.m; sourceTree = "<group>"; };
 		B408660D1A3FA08E0093CC61 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2D42E5CD1A5605F700335BE7 /* libz.1.2.5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +171,7 @@
 		B4CEA38C1A31510800569F5C = {
 			isa = PBXGroup;
 			children = (
+				2D42E5CC1A5605F700335BE7 /* libz.1.2.5.dylib */,
 				B49BBFF61A32CFD0000CA48C /* README.md */,
 				B4CEA3971A31510800569F5C /* Abq Data */,
 				B4CEA3B41A31510800569F5C /* Abq DataTests */,
