@@ -73,6 +73,10 @@
 - (NSString *)nameFromDictionary:(NSDictionary *)d {
 	if ([d valueForKeyPath:@"attributes.Title"])
 		return [d valueForKey:@"attributes.Title"];
+	if ([d valueForKeyPath:@"attributes.TITLE"])
+		return [d valueForKey:@"attributes.TITLE"];
+	if ([d valueForKey:@"name"])
+		return [d valueForKey:@"name"];
 	
 	return [d description];
 }
@@ -82,6 +86,12 @@
 	if ([d valueForKey:@"attributes.Address"])
 		return [d valueForKey:@"attibutes.Address"];
 	
+	if ([d valueForKey:@"attributes.ADDRESS"])
+		return [d valueForKey:@"attibutes.ADDRESS"];
+	
+	if ([d valueForKey:@"ADDRESS"])
+		return [d valueForKey:@"ADDRESS"];
+
 	// generalize later Chris J
 	return [d description];
 }

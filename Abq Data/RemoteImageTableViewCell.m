@@ -31,9 +31,6 @@ static NSCache *cache;
 
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
-	CGRect r = webView.frame;
-	CGRect sr = [webView superview].bounds;
-
 }
 
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {

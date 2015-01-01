@@ -16,6 +16,8 @@
   "name" : "Free Wifi",
   "url" : "http:\/\/data.cabq.gov\/community\/wifi\/wifispots",
   "cellTextLabel" : "name",
+ "cellDetail1" : "ADDRESS",
+
   },
   {
   "form" : "dictionary",
@@ -68,6 +70,16 @@
  "arrayKey" : "data.row",
  "rowKey"  : "value",
  "cellDetail1" : "cellDetail1"
+ }
+ ,
+ {
+ "form" : "dictionary",
+ "name" : "Police Incidents",
+ "url" : "http:\/\/data.cabq.gov\/publicsafety\/policeincidents\/policeincidentsJSON_ALL",
+ "arrayKey" : "features",
+ "cellTextLabel" : "attributes.Title",
+ "cellDetail1" : "attributes.Site",
+ "cellDetail2" : "attributes.Address"
  }
  
 ]

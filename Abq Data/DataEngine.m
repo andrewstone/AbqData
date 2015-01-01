@@ -50,6 +50,9 @@ NSString *CoreLocationUpdatedNotification = @"CoreLocationUpdatedNotification";
 			NSArray *cell = [d valueForKey:@"Cell"];
 			NSDictionary *data = [[cell objectAtIndex:0] valueForKey:@"Data"];
 			[newDict setObject:[data valueForKey:@"__text"] forKey:@"name"];
+			data = [[cell objectAtIndex:1] valueForKey:@"Data"];
+			if ([data valueForKey:@"__text"])
+				[newDict setObject:[data valueForKey:@"__text"] forKey:@"ADDRESS"];
 			NSDictionary *latDict = [[cell objectAtIndex:3] valueForKey:@"Data"];
 			NSDictionary *longDict = [[cell objectAtIndex:4] valueForKey:@"Data"];
 			double lattitude = [[latDict valueForKey:@"__text"] doubleValue];
