@@ -23,17 +23,6 @@
 	self.objects = [NSJSONSerialization JSONObjectWithData:d options:0 error:&error];
 }
 
-//- (IBAction)testSystem:(id)sender {
-//	[[DataEngine dataEngine] performRequest:test completion:^(id dataObject, NSError *error) {
-//		if (error == nil) {
-//			// we got our data
-//			self.objects = dataObject;
-//			[self.tableView reloadData];
-//		} else {
-//			[[DataEngine dataEngine] showError:error];
-//		}
-//	}];
-//}
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	self.title = @"Albuquerque City Data";
@@ -50,10 +39,6 @@
 	
 	[self loadJSON];
 
-//	self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
-//	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-//	self.navigationItem.rightBarButtonItem = addButton;
 	self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
@@ -61,15 +46,6 @@
 	[super didReceiveMemoryWarning];
 	// Dispose of any resources that can be recreated.
 }
-
-//- (void)insertNewObject:(id)sender {
-//	if (!self.objects) {
-//	    self.objects = [[NSMutableArray alloc] init];
-//	}
-//	[self.objects insertObject:[NSDate date] atIndex:0];
-//	NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//	[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-//}
 
 #pragma mark - Segues
 
