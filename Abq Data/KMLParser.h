@@ -26,6 +26,8 @@
     
     NSXMLParser *_xmlParser;
 }
+// andrew
+- (id)initWithData:(NSData *)data;
 
 - (id)initWithURL:(NSURL *)url;
 - (void)parseKML;

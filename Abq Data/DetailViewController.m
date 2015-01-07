@@ -19,6 +19,7 @@
 #import "ArtCardViewController.h"
 #import "WebViewController.h"
 #import "MapViewController.h"
+#import "KMLViewerViewController.h"
 
 
 @interface DetailViewController () <UITableViewDataSource,UITableViewDelegate>
@@ -273,10 +274,38 @@ static NSNumberFormatter *numberFormatter = nil;
 	}
 }
 
+- (NSString *)nextUniqueTempFolder {
+	NSError *error;
+	NSString *folderName = [NSString stringWithFormat:@"%d",(int)CFAbsoluteTimeGetCurrent()];
+	NSString *path = [NSTemporaryDirectory() stringByAppendingPathComponent:folderName];
+	
+	if (![[NSFileManager defaultManager] createDirectoryAtPath:path withIntermediateDirectories:NO attributes:nil error:&error]) {
+		NSLog(@"failed to create %@",path);
+	}
+	
+	return path;
+}
+
 - (void)decompressAndLoadKMZ:(NSData *)data {
+	// create /tmp dir
+	NSString *folder = [self nextUniqueTempFolder];
+	
     // decompress the data and create new kmlData object
-    NSData *kmlData = [self uncompressGZip:data];
-    NSLog(@"kmlData dump: %@", kmlData);
+
+	NSData *kmlData = [self uncompressGZip:data];
+	
+	
+	NSString *kml = [[DataEngine dataEngine]stringForData:kmlData];
+	KMLViewerViewController *kvc = [[KMLViewerViewController alloc]initWithKML:kml resourceFolder:folder];
+    NSLog(@"kmlData dump: %@", kml);
+	
+	// so it doesn't get reloaded
+	self.objects = @[data];
+	
+	[self.navigationController pushViewController:kvc animated:YES];
+
+	
+	
     // Chris' notes/todos:  I'm basing this on Andrew's process below, but not using a file based approach.
     // TODO: enumerate objects in the kml file.  This is where using a lib would be useful
     // TODO: invoke the KMLParser

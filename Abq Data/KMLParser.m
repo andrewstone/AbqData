@@ -274,14 +274,26 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
 
 - (id)initWithURL:(NSURL *)url
 {
-    if (self = [super init]) {
-        _styles = [[NSMutableDictionary alloc] init];
-        _placemarks = [[NSMutableArray alloc] init];
-        _xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
-        
-        [_xmlParser setDelegate:self];
-    }
-    return self;
+	if (self = [super init]) {
+		_styles = [[NSMutableDictionary alloc] init];
+		_placemarks = [[NSMutableArray alloc] init];
+		_xmlParser = [[NSXMLParser alloc] initWithContentsOfURL:url];
+		
+		[_xmlParser setDelegate:self];
+	}
+	return self;
+}
+
+- (id)initWithData:(NSData *)data
+{
+	if (self = [super init]) {
+		_styles = [[NSMutableDictionary alloc] init];
+		_placemarks = [[NSMutableArray alloc] init];
+		_xmlParser = [[NSXMLParser alloc] initWithData:data];
+		
+		[_xmlParser setDelegate:self];
+	}
+	return self;
 }
 
 //- (void)dealloc

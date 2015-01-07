@@ -1,19 +1,45 @@
 
 #import "KMLViewerViewController.h"
+#import "KMLParser.h"
 
 @implementation KMLViewerViewController
+
+
+- (id)initWithKML:(NSString *)kml resourceFolder:(NSString *)resources {
+	self = [super init];
+	self.loadedFolder = resources;
+	self.kml = kml;
+	return self;
+}
+
+- (id)initWithKMLData:(NSData *) data{
+	self = [super init];
+	self.kmlData = data;
+	return self;
+}
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Locate the path to the route.kml file in the application's bundle
-    // and parse it with the KMLParser.
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"KML_Sample" ofType:@"kml"];
-    NSURL *url = [NSURL fileURLWithPath:path];
-    kmlParser = [[KMLParser alloc] initWithURL:url];
+	
+	// load what we have:
+	
+	if (self.kmlData) [self loadKMLData:self.kmlData];
+	else if (self.kml) [self loadKMLData:[self.kml dataUsingEncoding:NSUTF8StringEncoding allowLossyConversion:YES]];
+	else if (self.loadedURL) {
+		// we'd make request and deal with it here instead of DetailVC
+	}
+}
+
+- (void)loadKMLData:(NSData *)data {
+//    // Locate the path to the route.kml file in the application's bundle
+//    // and parse it with the KMLParser.
+//    NSString *path = [[NSBundle mainBundle] pathForResource:@"KML_Sample" ofType:@"kml"];
+//    NSURL *url = [NSURL fileURLWithPath:path];
+	kmlParser = [[KMLParser alloc] initWithData:data];
     [kmlParser parseKML];
-    
+	
+	
     // Add all of the MKOverlay objects parsed from the KML file to the map.
     NSArray *overlays = [kmlParser overlays];
     [map addOverlays:overlays];
@@ -21,6 +47,13 @@
     // Add all of the MKAnnotation objects parsed from the KML file to the map.
     NSArray *annotations = [kmlParser points];
     [map addAnnotations:annotations];
+	
+	// NADA!
+	if (overlays.count == 0 && annotations.count == 0) {
+		CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(35.1107, -106.61); // backstop
+		[map setRegion:MKCoordinateRegionMake(coord, MKCoordinateSpanMake(0.3, 0.3))];
+		return;
+	}
     
     // Walk the list of overlays and annotations and create a MKMapRect that
     // bounds all of them and store it into flyTo.
