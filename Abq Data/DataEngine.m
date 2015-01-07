@@ -175,6 +175,10 @@ NSString *CoreLocationUpdatedNotification = @"CoreLocationUpdatedNotification";
 	[a show];
 }
 
+- (NSString *)stringForData:(NSData *)data {
+	return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+}
+
 - (NSString *)stringForData:(NSData *)data response:(NSURLResponse *)response {
 	if (!data || data.length == 0) return nil;
 	

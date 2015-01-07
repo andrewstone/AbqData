@@ -22,11 +22,18 @@ extern NSString *CoreLocationUpdatedNotification;
 
 + (DataEngine *)dataEngine;
 - (void)performRequest:(NSString *)requestName completion:(SDUICompletionBlock)completionBlock;
-
 - (void)showError:(NSError *)error;
+
+// further parsing of non-JSON types:
 - (id)parseXML:(NSData *)d;
+
+
+// location:
 - (CLLocationCoordinate2D)convertWebMercatorToGeographicX:(double)mercX Y:(double)mercY;
 - (BOOL)checkLocationManagerAuthorizationStatus;
 - (void)determineLocation:(BOOL)activated;
 
+// helpers:
+- (NSString *)stringForData:(NSData *)data; // when response not avail
+- (NSString *)stringForData:(NSData *)data response:(NSURLResponse *)response;
 @end
