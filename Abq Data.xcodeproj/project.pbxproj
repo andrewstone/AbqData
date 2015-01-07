@@ -13,6 +13,7 @@
 		B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B408660F1A3FA08E0093CC61 /* WebViewController.xib */; };
 		B40866151A3FA4230093CC61 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B40866131A3FA4230093CC61 /* MapViewController.m */; };
 		B40866161A3FA4230093CC61 /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B40866141A3FA4230093CC61 /* MapViewController.xib */; };
+		B42125EA1A5DAD760041ED7B /* KMLViewerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42125E91A5DAD760041ED7B /* KMLViewerViewController.xib */; };
 		B452FD591A52FD160033CCB1 /* KMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B452FD561A52FD160033CCB1 /* KMLParser.m */; };
 		B452FD5A1A52FD160033CCB1 /* KMLViewerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B452FD581A52FD160033CCB1 /* KMLViewerViewController.m */; };
 		B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B454717E1A33D0AB008F2B17 /* XMLDictionary.m */; };
@@ -52,6 +53,7 @@
 		B40866121A3FA4230093CC61 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		B40866131A3FA4230093CC61 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		B40866141A3FA4230093CC61 /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		B42125E91A5DAD760041ED7B /* KMLViewerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = KMLViewerViewController.xib; sourceTree = "<group>"; };
 		B452FD551A52FD160033CCB1 /* KMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLParser.h; sourceTree = "<group>"; };
 		B452FD561A52FD160033CCB1 /* KMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMLParser.m; sourceTree = "<group>"; };
 		B452FD571A52FD160033CCB1 /* KMLViewerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMLViewerViewController.h; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				B452FD561A52FD160033CCB1 /* KMLParser.m */,
 				B452FD571A52FD160033CCB1 /* KMLViewerViewController.h */,
 				B452FD581A52FD160033CCB1 /* KMLViewerViewController.m */,
+				B42125E91A5DAD760041ED7B /* KMLViewerViewController.xib */,
 			);
 			name = Maps;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */,
+				B42125EA1A5DAD760041ED7B /* KMLViewerViewController.xib in Resources */,
 				B45EF8AA1A32403C003A3739 /* .gitignore in Resources */,
 				B4CEA3A71A31510800569F5C /* Main.storyboard in Resources */,
 				B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */,
