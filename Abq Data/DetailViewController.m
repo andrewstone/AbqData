@@ -20,7 +20,9 @@
 #import "WebViewController.h"
 #import "MapViewController.h"
 #import "KMLViewerViewController.h"
-
+#import "ZipFile.h"
+#import "ZipReadStream.h"
+#import "FileInZipInfo.h"
 
 @interface DetailViewController () <UITableViewDataSource,UITableViewDelegate>
 
@@ -286,20 +288,74 @@ static NSNumberFormatter *numberFormatter = nil;
 	return path;
 }
 
+
+- (NSString *)kmlContents:(NSData *)inData resourceFolder:(NSString *)folder {
+	// this abstracts away the details of a zip file
+	ZipFile *kmzFile;
+	
+	NSString *kmz = @"kmz.zip";
+	NSError *error = nil;
+	__block NSMutableData *data;
+	
+	// 1. save inData to a zipFile - it may contain multiple files
+	
+	NSString *filePath = [folder stringByAppendingPathComponent:kmz];
+	if ([inData writeToFile:filePath options:NSDataWritingAtomic error:&error]) {
+		
+		@try {
+			kmzFile = [[ZipFile alloc] initWithFileName:filePath mode:ZipFileModeUnzip];
+			
+			[kmzFile.listFileInZipInfos enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop)
+			 {
+				 FileInZipInfo *info = (FileInZipInfo *)obj;
+				 
+				 NSString *ext = info.name.pathExtension.lowercaseString;
+				 
+				 if ([ext isEqualToString:@"kml"]) {
+					 [kmzFile locateFileInZip:info.name];
+					 
+					 ZipReadStream *reader= kmzFile.readCurrentFileInZip;
+					 data = [[NSMutableData alloc] initWithLength:info.length];
+					 [reader readDataWithBuffer:data];
+					 [reader finishedReading];
+					 
+					 *stop = YES;
+				 }
+			 }];
+		}
+		@catch (NSException *exception) {
+			NSLog(@"exception, %@", [exception debugDescription]);
+		}
+		@finally {
+			if (kmzFile) {
+				[kmzFile close];
+			}
+		}
+		
+		if (data) {
+			// this is the kml file
+			return [[DataEngine dataEngine] stringForData:data];
+			
+		}
+	} // if file is written to disk
+	return nil;
+}
+
 - (void)decompressAndLoadKMZ:(NSData *)data {
 	// create /tmp dir
 	NSString *folder = [self nextUniqueTempFolder];
 	
     // decompress the data and create new kmlData object
-
-	NSData *kmlData = [self uncompressGZip:data];
+	// this is a fail for now:
+//	NSData *kmlData = [self uncompressGZip:data];
+//	NSString *kml = [[DataEngine dataEngine]stringForData:kmlData];
 	
+	NSString *kml = [self kmlContents:data resourceFolder:folder];
 	
-	NSString *kml = [[DataEngine dataEngine]stringForData:kmlData];
 	KMLViewerViewController *kvc = [[KMLViewerViewController alloc]initWithKML:kml resourceFolder:folder];
     NSLog(@"kmlData dump: %@", kml);
 	
-	// so it doesn't get reloaded
+	// so it doesn't get reloaded on NEXT viewDidLoad!
 	self.objects = @[data];
 	
 	[self.navigationController pushViewController:kvc animated:YES];
