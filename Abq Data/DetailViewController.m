@@ -38,8 +38,15 @@
 
 
 - (NSString *)valueFrom:(id)obj key:(NSString *)key {
-	if ([self useKeyPath:key]) return [obj valueForKeyPath:key];
-	else return [obj valueForKey:key];
+	NSString *result = nil;
+	if ([self useKeyPath:key]) result = [obj valueForKeyPath:key];
+	else result = [obj valueForKey:key];
+	if (![result isKindOfClass:[NSString class]]) {
+		// maybe a number
+		if ([result respondsToSelector:@selector(stringValue)])
+			result = [(NSNumber *)result stringValue];
+	}
+	return  result;
 }
 
 
@@ -122,7 +129,8 @@ static NSNumberFormatter *numberFormatter = nil;
 	
 	if ((s = [self valueFrom:obj key:cellDetail1])) {
 		NSString *t = [self valueFrom:obj key:cellDetail2];
-		cell.detailTextLabel.text = t ? [NSString stringWithFormat:@"%@ ~ %@",s,t] : s;
+		NSString *label = t ? [NSString stringWithFormat:@"%@ ~ %@",s,t] : s;
+		cell.detailTextLabel.text = label;
 	}
 	
 	[self subclassMods:cell object:(id)obj];
@@ -159,7 +167,16 @@ static NSNumberFormatter *numberFormatter = nil;
 
 - (void)makeRequest {
 	NSString *url = [self.detailItem valueForKey:@"url"];
+	
+	if (!url) {
+		[self.indicator stopAnimating];
+		self.textView.text = @"";
+		return;
+	}
 	[[DataEngine dataEngine] performRequest:url completion:^(id dataObject, NSError *error) {
+		[self.indicator stopAnimating];
+		self.textView.text = @"";
+		
 		if (error == nil) {
 			NSString *form = [self.detailItem valueForKey:@"form"];
 			if ([form isEqualToString:@"kmz"]) {
@@ -298,7 +315,6 @@ static NSNumberFormatter *numberFormatter = nil;
 	__block NSMutableData *data;
 	
 	// 1. save inData to a zipFile - it may contain multiple files
-	NSLog(folder);
 	
 	NSString *filePath = [folder stringByAppendingPathComponent:kmz];
 	if ([inData writeToFile:filePath options:NSDataWritingAtomic error:&error]) {
@@ -348,7 +364,7 @@ static NSNumberFormatter *numberFormatter = nil;
 	NSString *kml = [self kmlContents:data resourceFolder:folder];
 	
 	KMLViewerViewController *kvc = [[KMLViewerViewController alloc]initWithKML:kml resourceFolder:folder];
-NSLog(folder);
+
 	// so it doesn't get reloaded on NEXT viewDidLoad!
 	self.objects = @[data];
 	

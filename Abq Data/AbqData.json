@@ -87,5 +87,13 @@
  "name" : "City Open Space",
  "url" : "http:\/\/data.cabq.gov\/community\/openspace\/CityOpenSpace.kmz"
  }
- 
+ ,
+ {
+ "form" : "dictionary",
+ "name" : "Route 66 Signs",
+ "url" : "http:\/\/data.cabq.gov\/rt66signs\/rt66signsJSON_ALL",
+ "arrayKey" : "features",
+ "cellTextLabel" : "attributes.SIGNTYPE",
+ "cellDetail1" : "attributes.OBJECTID",
+ }
 ]

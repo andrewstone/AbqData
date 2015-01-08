@@ -15,7 +15,7 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zHc-4y-Wr7">
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="hybrid" translatesAutoresizingMaskIntoConstraints="NO" id="zHc-4y-Wr7">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                     <connections>
                         <outlet property="delegate" destination="-1" id="wkb-Ez-acS"/>
@@ -23,6 +23,12 @@
                 </mapView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="zHc-4y-Wr7" secondAttribute="bottom" id="D2H-hC-cZU"/>
+                <constraint firstItem="zHc-4y-Wr7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="YtQ-3A-aDN"/>
+                <constraint firstItem="zHc-4y-Wr7" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Z0g-9E-y0a"/>
+                <constraint firstAttribute="trailing" secondItem="zHc-4y-Wr7" secondAttribute="trailing" id="pgu-Z8-Qpl"/>
+            </constraints>
         </view>
     </objects>
 </document>
