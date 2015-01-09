@@ -95,5 +95,10 @@
  "arrayKey" : "features",
  "cellTextLabel" : "attributes.SIGNTYPE",
  "cellDetail1" : "attributes.OBJECTID",
+ },
+ {
+ "form" : "kmz",
+ "name" : "Neighborhood Association",
+ "url" : "http:\/\/data.cabq.gov\/community\/neighborhoods\/NeighborhoodAssociations.kmz"
  }
 ]
