@@ -100,5 +100,15 @@
  "form" : "kmz",
  "name" : "Neighborhood Association",
  "url" : "http:\/\/data.cabq.gov\/community\/neighborhoods\/NeighborhoodAssociations.kmz"
+ },
+ {
+ "form" : "kmz",
+ "name" : "Police Beats",
+ "url" : "http:\/\/data.cabq.gov\/publicsafety\/policebeats\/APD_BCSO_Beats.kmz"
+ },
+ {
+ "form" : "kmz",
+ "name" : "City Parks",
+ "url" : "http:\/\/data.cabq.gov\/community\/parksandrec\/parks\/CityParks.kmz"
  }
 ]

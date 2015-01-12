@@ -29,13 +29,11 @@
 	else if (self.loadedURL) {
 		// we'd make request and deal with it here instead of DetailVC
 	}
+	
+	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(mapOptionsAction:)];
 }
 
 - (void)loadKMLData:(NSData *)data {
-//    // Locate the path to the route.kml file in the application's bundle
-//    // and parse it with the KMLParser.
-//    NSString *path = [[NSBundle mainBundle] pathForResource:@"KML_Sample" ofType:@"kml"];
-//    NSURL *url = [NSURL fileURLWithPath:path];
 	kmlParser = [[KMLParser alloc] initWithData:data];
     [kmlParser parseKML];
 	
@@ -98,5 +96,16 @@
 {
     return [kmlParser viewForAnnotation:annotation];
 }
+
+// andrew
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+	if (buttonIndex > 0) map.mapType = buttonIndex-1;
+}
+
+- (void)mapOptionsAction:(id)sender {
+	UIAlertView *a = [[UIAlertView alloc] initWithTitle:nil message:nil delegate:self cancelButtonTitle:NSLocalizedString(@"Cancel", nil) otherButtonTitles:NSLocalizedString(@"Street", nil), NSLocalizedString(@"Satellite", nil), NSLocalizedString(@"Hybrid", nil), nil];
+	[a show];
+}
+
 
 @end

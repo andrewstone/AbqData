@@ -11,8 +11,10 @@ Tasks - search for '// TODO'
 
 2. For each dataset, test and enhance how you display the results
 
-3. Now we can load KMZ & KML - work on maps where we have multiple lines from the geometry payload, not just a point.
+3. Now we can load KMZ & KML - but:
+  - should load labels too if possible - look for better KML.
 
+4. Be able to display KML placemarks in a list sorted by proximity
 
 Questions for ABQData
 =====================
