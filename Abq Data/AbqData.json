@@ -111,4 +111,10 @@
  "name" : "City Parks",
  "url" : "http:\/\/data.cabq.gov\/community\/parksandrec\/parks\/CityParks.kmz"
  }
+ ,
+ {
+ "form" : "kmz",
+ "name" : "Bike Paths",
+ "url" : "http:\/\/data.cabq.gov\/community\/bikepaths\/BikePaths.kmz"
+ }
 ]
