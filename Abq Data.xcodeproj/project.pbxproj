@@ -41,6 +41,7 @@
 		B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = B454717E1A33D0AB008F2B17 /* XMLDictionary.m */; };
 		B45EF8AA1A32403C003A3739 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A81A32403C003A3739 /* .gitignore */; };
 		B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */; };
+		B489328E1A64D54000E7ECC8 /* BusRoutes.json in Resources */ = {isa = PBXBuildFile; fileRef = B489328D1A64D54000E7ECC8 /* BusRoutes.json */; };
 		B49BBFF21A329BD4000CA48C /* notLoadedArt.png in Resources */ = {isa = PBXBuildFile; fileRef = B49BBFF11A329BD4000CA48C /* notLoadedArt.png */; };
 		B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */; };
 		B4CEA39B1A31510800569F5C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B4CEA39A1A31510800569F5C /* main.m */; };
@@ -127,6 +128,7 @@
 		B454717E1A33D0AB008F2B17 /* XMLDictionary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XMLDictionary.m; sourceTree = "<group>"; };
 		B45EF8A81A32403C003A3739 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = SOURCE_ROOT; };
 		B45EF8A91A32403C003A3739 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = SOURCE_ROOT; };
+		B489328D1A64D54000E7ECC8 /* BusRoutes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = BusRoutes.json; sourceTree = "<group>"; };
 		B49BBFF11A329BD4000CA48C /* notLoadedArt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = notLoadedArt.png; path = images/notLoadedArt.png; sourceTree = "<group>"; };
 		B49BBFF31A32B2FA000CA48C /* ArtCardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArtCardViewController.h; sourceTree = "<group>"; };
 		B49BBFF41A32B2FA000CA48C /* ArtCardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ArtCardViewController.m; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			isa = PBXGroup;
 			children = (
 				B4CEA3F11A3213BA00569F5C /* AbqData.json */,
+				B489328D1A64D54000E7ECC8 /* BusRoutes.json */,
 				B452FD5C1A52FDB40033CCB1 /* Engine */,
 				B452FD531A52FCB60033CCB1 /* UI */,
 				B452FD5B1A52FD620033CCB1 /* Controllers */,
@@ -470,6 +473,7 @@
 				B40866161A3FA4230093CC61 /* MapViewController.xib in Resources */,
 				B45EF8AB1A32403C003A3739 /* TemplateIcon2x.png in Resources */,
 				B4CEA3AC1A31510800569F5C /* LaunchScreen.xib in Resources */,
+				B489328E1A64D54000E7ECC8 /* BusRoutes.json in Resources */,
 				B4CEA3F21A3213BA00569F5C /* AbqData.json in Resources */,
 				B4CEA3A91A31510800569F5C /* Images.xcassets in Resources */,
 			);

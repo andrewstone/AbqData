@@ -116,5 +116,26 @@
  "form" : "kmz",
  "name" : "Bike Paths",
  "url" : "http:\/\/data.cabq.gov\/community\/bikepaths\/BikePaths.kmz"
+ },
+ {
+ "form" : "kmz",
+ "name" : "Transit Routes",
+ "url" : "http:\/\/data.cabq.gov\/transit\/routesandstops\/transitroutes.kmz"
+ },
+ {
+ "form" : "kmz",
+ "name" : "Transit Stops",
+ "url" : "http:\/\/data.cabq.gov\/transit\/routesandstops\/transitstops.kmz"
+ },
+ {
+ "form" : "kmz",
+ "name" : "Real Time All Routes",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/allroutes.kml"
+ },
+ {
+ "form" : "subset",
+ "name" : "Real Time by Route",
+ "cellTextLabel" : "name",
+ "json" : "BusRoutes"
  }
 ]

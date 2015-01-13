@@ -169,6 +169,17 @@ static NSNumberFormatter *numberFormatter = nil;
 	NSString *url = [self.detailItem valueForKey:@"url"];
 	
 	if (!url) {
+		// for one thing, we might have list to load!
+		if ([[self.detailItem valueForKey:@"form"] isEqualToString:@"subset"]) {
+		NSString *file = [self.detailItem valueForKey:@"json"];
+			if (file) {
+				NSString *path = [[NSBundle mainBundle]pathForResource:file ofType:@"json"];
+				NSError *error = nil;
+				id objs = [NSJSONSerialization JSONObjectWithData:[NSData dataWithContentsOfFile:path] options:NSJSONReadingAllowFragments error:&error];
+
+				[self setupTableView:objs];
+			}
+		}
 		[self.indicator stopAnimating];
 		self.textView.text = @"";
 		return;
@@ -180,7 +191,13 @@ static NSNumberFormatter *numberFormatter = nil;
 		if (error == nil) {
 			NSString *form = [self.detailItem valueForKey:@"form"];
 			if ([form isEqualToString:@"kmz"]) {
-				[self decompressAndLoadKMZ:dataObject];
+				// andrew - it may actually be a dictionary already!
+				if ([dataObject isKindOfClass:[NSDictionary class]]) {
+					[self coreLoadKMLString:[dataObject description] resourceFolder:[self nextUniqueTempFolder]];
+
+				} else {
+					[self decompressAndLoadKMZ:dataObject];
+				}
 			} else if ([form isEqualToString:@"dictionary"]) {
 				NSString *key = [self.detailItem valueForKey:@"arrayKey"];
 				NSArray *a = dataObject;
@@ -276,6 +293,13 @@ static NSNumberFormatter *numberFormatter = nil;
 			return;
 		}
 	}
+	if ([[d valueForKey:@"form"] isEqualToString:@"kmz"]) {
+		DetailViewController *dvc = [[DetailViewController alloc] init];
+		dvc.detailItem = d;
+		[self.navigationController pushViewController:dvc animated:YES];
+		
+		return;
+	}
 	// what you do now depends on kind of data
 	// for example, let's deal with art first:
 	if ([[self.detailItem valueForKey:@"name"] isEqualToString:@"Public Art"]) {
@@ -358,17 +382,20 @@ static NSNumberFormatter *numberFormatter = nil;
 	return nil;
 }
 
+- (void)coreLoadKMLString:(NSString *)kml resourceFolder:(NSString *)folder {
+	
+	KMLViewerViewController *kvc = [[KMLViewerViewController alloc]initWithKML:kml resourceFolder:folder];
+	
+	// so it doesn't get reloaded on NEXT viewDidLoad!
+	self.objects = @[kml];
+	
+	[self.navigationController pushViewController:kvc animated:YES];
+}
 - (void)decompressAndLoadKMZ:(NSData *)data {
 
 	NSString *folder = [self nextUniqueTempFolder];
 	NSString *kml = [self kmlContents:data resourceFolder:folder];
-	
-	KMLViewerViewController *kvc = [[KMLViewerViewController alloc]initWithKML:kml resourceFolder:folder];
-
-	// so it doesn't get reloaded on NEXT viewDidLoad!
-	self.objects = @[data];
-	
-	[self.navigationController pushViewController:kvc animated:YES];
+	[self coreLoadKMLString:kml resourceFolder:folder];
 }
 
 // The reason this won't work is because KMZ can contain multiple files

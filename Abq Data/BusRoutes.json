@@ -1,0 +1,202 @@
+[
+ {
+ "form" : "kmz",
+ "name" : "Route 1",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route1.kml"
+},
+ {
+"form" : "kmz",
+ "name" : "Route 2",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route2.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 5",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route5.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 6",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route6.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 7",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route7.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 8",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route8.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 10",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route10.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 11",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route11.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 12",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route12.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 13",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route13.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 16",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route16.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 31",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route31.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 34",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route34.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 36",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route36.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 40",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route40.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 50",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route50.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 51",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route51.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 53",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route53.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 54",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route54.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 66",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route66.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 92",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route92.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 93",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route93.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 94",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route94.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 96",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route96.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 97",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route97.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 98",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route98.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 140",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route140.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 141",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route141.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 155",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route155.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 157",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route157.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 162",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route162.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 198",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route198.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 217",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route217.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 222",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route222.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 250",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route250.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 251",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route251.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 551",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route551.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 766",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route766.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 777",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route777.kml"
+ },
+ {
+"form" : "kmz",
+ "name" : "Route 790",
+ "url" : "http:\/\/data.cabq.gov\/transit\/realtime\/route\/route790.kml"
+ }
+]
