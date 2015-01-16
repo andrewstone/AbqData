@@ -23,7 +23,7 @@
 #import "ZipFile.h"
 #import "ZipReadStream.h"
 #import "FileInZipInfo.h"
-
+#import "XMLDictionary.h"
 @interface DetailViewController () <UITableViewDataSource,UITableViewDelegate>
 
 @end
@@ -386,6 +386,11 @@ static NSNumberFormatter *numberFormatter = nil;
 	
 	KMLViewerViewController *kvc = [[KMLViewerViewController alloc]initWithKML:kml resourceFolder:folder];
 	
+	// NSDictionary *d = [NSDictionary dictionaryWithXMLString:kml];
+
+
+	// TODO - grab useful placemarks from this!
+	self.textView.text = kml;
 	// so it doesn't get reloaded on NEXT viewDidLoad!
 	self.objects = @[kml];
 	
