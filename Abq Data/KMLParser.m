@@ -603,6 +603,13 @@ static void strToCoords(NSString *str, CLLocationCoordinate2D **coordsOut, NSUIn
     view.lineWidth = strokeWidth;
 }
 
+//- (void)applyToOverlayPathView:(MKOverlayRenderer *)view
+//{
+//    view.strokeColor = strokeColor;
+//    view.fillColor = fillColor;
+//    view.lineWidth = strokeWidth;
+//}
+
 @end
 
 @implementation KMLGeometry
