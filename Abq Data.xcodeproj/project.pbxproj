@@ -24,6 +24,30 @@
 		2DE805C81A8338A100555DAD /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805B51A8338A100555DAD /* CXMLNode_XPathExtensions.m */; };
 		2DE805C91A8338A100555DAD /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805B71A8338A100555DAD /* CXMLNode.m */; };
 		2DE805CA1A8338A100555DAD /* CTidy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805BA1A8338A100555DAD /* CTidy.m */; };
+		2DE805FC1A83DC6700555DAD /* SimpleKML_UIImage.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805CD1A83DC6700555DAD /* SimpleKML_UIImage.m */; };
+		2DE805FD1A83DC6700555DAD /* SimpleKML.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805CF1A83DC6700555DAD /* SimpleKML.m */; };
+		2DE805FE1A83DC6700555DAD /* SimpleKMLBalloonStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805D11A83DC6700555DAD /* SimpleKMLBalloonStyle.m */; };
+		2DE805FF1A83DC6700555DAD /* SimpleKMLColorStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805D31A83DC6700555DAD /* SimpleKMLColorStyle.m */; };
+		2DE806001A83DC6700555DAD /* SimpleKMLContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805D51A83DC6700555DAD /* SimpleKMLContainer.m */; };
+		2DE806011A83DC6700555DAD /* SimpleKMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805D71A83DC6700555DAD /* SimpleKMLDocument.m */; };
+		2DE806021A83DC6700555DAD /* SimpleKMLFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805D91A83DC6700555DAD /* SimpleKMLFeature.m */; };
+		2DE806031A83DC6700555DAD /* SimpleKMLFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805DB1A83DC6700555DAD /* SimpleKMLFolder.m */; };
+		2DE806041A83DC6700555DAD /* SimpleKMLGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805DD1A83DC6700555DAD /* SimpleKMLGeometry.m */; };
+		2DE806051A83DC6700555DAD /* SimpleKMLGroundOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805DF1A83DC6700555DAD /* SimpleKMLGroundOverlay.m */; };
+		2DE806061A83DC6700555DAD /* SimpleKMLIconStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805E11A83DC6700555DAD /* SimpleKMLIconStyle.m */; };
+		2DE806071A83DC6700555DAD /* SimpleKMLLinearRing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805E31A83DC6700555DAD /* SimpleKMLLinearRing.m */; };
+		2DE806081A83DC6700555DAD /* SimpleKMLLineString.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805E51A83DC6700555DAD /* SimpleKMLLineString.m */; };
+		2DE806091A83DC6700555DAD /* SimpleKMLLineStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805E71A83DC6700555DAD /* SimpleKMLLineStyle.m */; };
+		2DE8060A1A83DC6700555DAD /* SimpleKMLMultiGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805E91A83DC6700555DAD /* SimpleKMLMultiGeometry.m */; };
+		2DE8060B1A83DC6700555DAD /* SimpleKMLObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805EB1A83DC6700555DAD /* SimpleKMLObject.m */; };
+		2DE8060C1A83DC6700555DAD /* SimpleKMLOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805ED1A83DC6700555DAD /* SimpleKMLOverlay.m */; };
+		2DE8060D1A83DC6700555DAD /* SimpleKMLPlacemark.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805EF1A83DC6700555DAD /* SimpleKMLPlacemark.m */; };
+		2DE8060E1A83DC6700555DAD /* SimpleKMLPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805F11A83DC6700555DAD /* SimpleKMLPoint.m */; };
+		2DE8060F1A83DC6700555DAD /* SimpleKMLPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805F31A83DC6700555DAD /* SimpleKMLPolygon.m */; };
+		2DE806101A83DC6700555DAD /* SimpleKMLPolyStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805F51A83DC6700555DAD /* SimpleKMLPolyStyle.m */; };
+		2DE806111A83DC6700555DAD /* SimpleKMLStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805F71A83DC6700555DAD /* SimpleKMLStyle.m */; };
+		2DE806121A83DC6700555DAD /* SimpleKMLStyleSelector.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805F91A83DC6700555DAD /* SimpleKMLStyleSelector.m */; };
+		2DE806131A83DC6700555DAD /* SimpleKMLSubStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2DE805FB1A83DC6700555DAD /* SimpleKMLSubStyle.m */; };
 		B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */; };
 		B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B408660E1A3FA08E0093CC61 /* WebViewController.m */; };
 		B40866111A3FA08E0093CC61 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B408660F1A3FA08E0093CC61 /* WebViewController.xib */; };
@@ -117,6 +141,54 @@
 		2DE805B91A8338A100555DAD /* CTidy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTidy.h; sourceTree = "<group>"; };
 		2DE805BA1A8338A100555DAD /* CTidy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTidy.m; sourceTree = "<group>"; };
 		2DE805BB1A8338A100555DAD /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		2DE805CC1A83DC6700555DAD /* SimpleKML_UIImage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKML_UIImage.h; sourceTree = "<group>"; };
+		2DE805CD1A83DC6700555DAD /* SimpleKML_UIImage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKML_UIImage.m; sourceTree = "<group>"; };
+		2DE805CE1A83DC6700555DAD /* SimpleKML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKML.h; sourceTree = "<group>"; };
+		2DE805CF1A83DC6700555DAD /* SimpleKML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKML.m; sourceTree = "<group>"; };
+		2DE805D01A83DC6700555DAD /* SimpleKMLBalloonStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLBalloonStyle.h; sourceTree = "<group>"; };
+		2DE805D11A83DC6700555DAD /* SimpleKMLBalloonStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLBalloonStyle.m; sourceTree = "<group>"; };
+		2DE805D21A83DC6700555DAD /* SimpleKMLColorStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLColorStyle.h; sourceTree = "<group>"; };
+		2DE805D31A83DC6700555DAD /* SimpleKMLColorStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLColorStyle.m; sourceTree = "<group>"; };
+		2DE805D41A83DC6700555DAD /* SimpleKMLContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLContainer.h; sourceTree = "<group>"; };
+		2DE805D51A83DC6700555DAD /* SimpleKMLContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLContainer.m; sourceTree = "<group>"; };
+		2DE805D61A83DC6700555DAD /* SimpleKMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLDocument.h; sourceTree = "<group>"; };
+		2DE805D71A83DC6700555DAD /* SimpleKMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLDocument.m; sourceTree = "<group>"; };
+		2DE805D81A83DC6700555DAD /* SimpleKMLFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLFeature.h; sourceTree = "<group>"; };
+		2DE805D91A83DC6700555DAD /* SimpleKMLFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLFeature.m; sourceTree = "<group>"; };
+		2DE805DA1A83DC6700555DAD /* SimpleKMLFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLFolder.h; sourceTree = "<group>"; };
+		2DE805DB1A83DC6700555DAD /* SimpleKMLFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLFolder.m; sourceTree = "<group>"; };
+		2DE805DC1A83DC6700555DAD /* SimpleKMLGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLGeometry.h; sourceTree = "<group>"; };
+		2DE805DD1A83DC6700555DAD /* SimpleKMLGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLGeometry.m; sourceTree = "<group>"; };
+		2DE805DE1A83DC6700555DAD /* SimpleKMLGroundOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLGroundOverlay.h; sourceTree = "<group>"; };
+		2DE805DF1A83DC6700555DAD /* SimpleKMLGroundOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLGroundOverlay.m; sourceTree = "<group>"; };
+		2DE805E01A83DC6700555DAD /* SimpleKMLIconStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLIconStyle.h; sourceTree = "<group>"; };
+		2DE805E11A83DC6700555DAD /* SimpleKMLIconStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLIconStyle.m; sourceTree = "<group>"; };
+		2DE805E21A83DC6700555DAD /* SimpleKMLLinearRing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLLinearRing.h; sourceTree = "<group>"; };
+		2DE805E31A83DC6700555DAD /* SimpleKMLLinearRing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLLinearRing.m; sourceTree = "<group>"; };
+		2DE805E41A83DC6700555DAD /* SimpleKMLLineString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLLineString.h; sourceTree = "<group>"; };
+		2DE805E51A83DC6700555DAD /* SimpleKMLLineString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLLineString.m; sourceTree = "<group>"; };
+		2DE805E61A83DC6700555DAD /* SimpleKMLLineStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLLineStyle.h; sourceTree = "<group>"; };
+		2DE805E71A83DC6700555DAD /* SimpleKMLLineStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLLineStyle.m; sourceTree = "<group>"; };
+		2DE805E81A83DC6700555DAD /* SimpleKMLMultiGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLMultiGeometry.h; sourceTree = "<group>"; };
+		2DE805E91A83DC6700555DAD /* SimpleKMLMultiGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLMultiGeometry.m; sourceTree = "<group>"; };
+		2DE805EA1A83DC6700555DAD /* SimpleKMLObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLObject.h; sourceTree = "<group>"; };
+		2DE805EB1A83DC6700555DAD /* SimpleKMLObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLObject.m; sourceTree = "<group>"; };
+		2DE805EC1A83DC6700555DAD /* SimpleKMLOverlay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLOverlay.h; sourceTree = "<group>"; };
+		2DE805ED1A83DC6700555DAD /* SimpleKMLOverlay.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLOverlay.m; sourceTree = "<group>"; };
+		2DE805EE1A83DC6700555DAD /* SimpleKMLPlacemark.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLPlacemark.h; sourceTree = "<group>"; };
+		2DE805EF1A83DC6700555DAD /* SimpleKMLPlacemark.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLPlacemark.m; sourceTree = "<group>"; };
+		2DE805F01A83DC6700555DAD /* SimpleKMLPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLPoint.h; sourceTree = "<group>"; };
+		2DE805F11A83DC6700555DAD /* SimpleKMLPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLPoint.m; sourceTree = "<group>"; };
+		2DE805F21A83DC6700555DAD /* SimpleKMLPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLPolygon.h; sourceTree = "<group>"; };
+		2DE805F31A83DC6700555DAD /* SimpleKMLPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLPolygon.m; sourceTree = "<group>"; };
+		2DE805F41A83DC6700555DAD /* SimpleKMLPolyStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLPolyStyle.h; sourceTree = "<group>"; };
+		2DE805F51A83DC6700555DAD /* SimpleKMLPolyStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLPolyStyle.m; sourceTree = "<group>"; };
+		2DE805F61A83DC6700555DAD /* SimpleKMLStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLStyle.h; sourceTree = "<group>"; };
+		2DE805F71A83DC6700555DAD /* SimpleKMLStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLStyle.m; sourceTree = "<group>"; };
+		2DE805F81A83DC6700555DAD /* SimpleKMLStyleSelector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLStyleSelector.h; sourceTree = "<group>"; };
+		2DE805F91A83DC6700555DAD /* SimpleKMLStyleSelector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLStyleSelector.m; sourceTree = "<group>"; };
+		2DE805FA1A83DC6700555DAD /* SimpleKMLSubStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleKMLSubStyle.h; sourceTree = "<group>"; };
+		2DE805FB1A83DC6700555DAD /* SimpleKMLSubStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleKMLSubStyle.m; sourceTree = "<group>"; };
 		B4081D021A325782001D8793 /* RemoteImageTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RemoteImageTableViewCell.h; sourceTree = "<group>"; };
 		B4081D031A325782001D8793 /* RemoteImageTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RemoteImageTableViewCell.m; sourceTree = "<group>"; };
 		B408660D1A3FA08E0093CC61 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
@@ -277,6 +349,61 @@
 			path = Tidy;
 			sourceTree = "<group>";
 		};
+		2DE805CB1A83DC3600555DAD /* SimpleXML */ = {
+			isa = PBXGroup;
+			children = (
+				2DE805CC1A83DC6700555DAD /* SimpleKML_UIImage.h */,
+				2DE805CD1A83DC6700555DAD /* SimpleKML_UIImage.m */,
+				2DE805CE1A83DC6700555DAD /* SimpleKML.h */,
+				2DE805CF1A83DC6700555DAD /* SimpleKML.m */,
+				2DE805D01A83DC6700555DAD /* SimpleKMLBalloonStyle.h */,
+				2DE805D11A83DC6700555DAD /* SimpleKMLBalloonStyle.m */,
+				2DE805D21A83DC6700555DAD /* SimpleKMLColorStyle.h */,
+				2DE805D31A83DC6700555DAD /* SimpleKMLColorStyle.m */,
+				2DE805D41A83DC6700555DAD /* SimpleKMLContainer.h */,
+				2DE805D51A83DC6700555DAD /* SimpleKMLContainer.m */,
+				2DE805D61A83DC6700555DAD /* SimpleKMLDocument.h */,
+				2DE805D71A83DC6700555DAD /* SimpleKMLDocument.m */,
+				2DE805D81A83DC6700555DAD /* SimpleKMLFeature.h */,
+				2DE805D91A83DC6700555DAD /* SimpleKMLFeature.m */,
+				2DE805DA1A83DC6700555DAD /* SimpleKMLFolder.h */,
+				2DE805DB1A83DC6700555DAD /* SimpleKMLFolder.m */,
+				2DE805DC1A83DC6700555DAD /* SimpleKMLGeometry.h */,
+				2DE805DD1A83DC6700555DAD /* SimpleKMLGeometry.m */,
+				2DE805DE1A83DC6700555DAD /* SimpleKMLGroundOverlay.h */,
+				2DE805DF1A83DC6700555DAD /* SimpleKMLGroundOverlay.m */,
+				2DE805E01A83DC6700555DAD /* SimpleKMLIconStyle.h */,
+				2DE805E11A83DC6700555DAD /* SimpleKMLIconStyle.m */,
+				2DE805E21A83DC6700555DAD /* SimpleKMLLinearRing.h */,
+				2DE805E31A83DC6700555DAD /* SimpleKMLLinearRing.m */,
+				2DE805E41A83DC6700555DAD /* SimpleKMLLineString.h */,
+				2DE805E51A83DC6700555DAD /* SimpleKMLLineString.m */,
+				2DE805E61A83DC6700555DAD /* SimpleKMLLineStyle.h */,
+				2DE805E71A83DC6700555DAD /* SimpleKMLLineStyle.m */,
+				2DE805E81A83DC6700555DAD /* SimpleKMLMultiGeometry.h */,
+				2DE805E91A83DC6700555DAD /* SimpleKMLMultiGeometry.m */,
+				2DE805EA1A83DC6700555DAD /* SimpleKMLObject.h */,
+				2DE805EB1A83DC6700555DAD /* SimpleKMLObject.m */,
+				2DE805EC1A83DC6700555DAD /* SimpleKMLOverlay.h */,
+				2DE805ED1A83DC6700555DAD /* SimpleKMLOverlay.m */,
+				2DE805EE1A83DC6700555DAD /* SimpleKMLPlacemark.h */,
+				2DE805EF1A83DC6700555DAD /* SimpleKMLPlacemark.m */,
+				2DE805F01A83DC6700555DAD /* SimpleKMLPoint.h */,
+				2DE805F11A83DC6700555DAD /* SimpleKMLPoint.m */,
+				2DE805F21A83DC6700555DAD /* SimpleKMLPolygon.h */,
+				2DE805F31A83DC6700555DAD /* SimpleKMLPolygon.m */,
+				2DE805F41A83DC6700555DAD /* SimpleKMLPolyStyle.h */,
+				2DE805F51A83DC6700555DAD /* SimpleKMLPolyStyle.m */,
+				2DE805F61A83DC6700555DAD /* SimpleKMLStyle.h */,
+				2DE805F71A83DC6700555DAD /* SimpleKMLStyle.m */,
+				2DE805F81A83DC6700555DAD /* SimpleKMLStyleSelector.h */,
+				2DE805F91A83DC6700555DAD /* SimpleKMLStyleSelector.m */,
+				2DE805FA1A83DC6700555DAD /* SimpleKMLSubStyle.h */,
+				2DE805FB1A83DC6700555DAD /* SimpleKMLSubStyle.m */,
+			);
+			name = SimpleXML;
+			sourceTree = "<group>";
+		};
 		B42125EB1A5DCC8D0041ED7B /* ObjZip */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,6 +509,7 @@
 		B452FD541A52FCEB0033CCB1 /* Maps */ = {
 			isa = PBXGroup;
 			children = (
+				2DE805CB1A83DC3600555DAD /* SimpleXML */,
 				2DC3CEDF1A8333D000A900A4 /* TouchXML */,
 				B42125EB1A5DCC8D0041ED7B /* ObjZip */,
 				B40866121A3FA4230093CC61 /* MapViewController.h */,
@@ -612,45 +740,69 @@
 				B4CEA39E1A31510800569F5C /* AppDelegate.m in Sources */,
 				B421261C1A5DCD430041ED7B /* ioapi.c in Sources */,
 				B421262D1A5DCD430041ED7B /* inffast.c in Sources */,
+				2DE806111A83DC6700555DAD /* SimpleKMLStyle.m in Sources */,
+				2DE806001A83DC6700555DAD /* SimpleKMLContainer.m in Sources */,
+				2DE8060B1A83DC6700555DAD /* SimpleKMLObject.m in Sources */,
 				2DE805C61A8338A100555DAD /* CXMLNamespaceNode.m in Sources */,
 				B4081D041A325782001D8793 /* RemoteImageTableViewCell.m in Sources */,
+				2DE805FF1A83DC6700555DAD /* SimpleKMLColorStyle.m in Sources */,
+				2DE8060A1A83DC6700555DAD /* SimpleKMLMultiGeometry.m in Sources */,
+				2DE806041A83DC6700555DAD /* SimpleKMLGeometry.m in Sources */,
 				2DE805C71A8338A100555DAD /* CXMLNode_PrivateExtensions.m in Sources */,
 				B42126201A5DCD430041ED7B /* ZipException.m in Sources */,
 				B42126321A5DCD430041ED7B /* zutil.c in Sources */,
+				2DE806101A83DC6700555DAD /* SimpleKMLPolyStyle.m in Sources */,
 				B42126211A5DCD430041ED7B /* ZipFile.m in Sources */,
+				2DE805FC1A83DC6700555DAD /* SimpleKML_UIImage.m in Sources */,
+				2DE806121A83DC6700555DAD /* SimpleKMLStyleSelector.m in Sources */,
+				2DE806081A83DC6700555DAD /* SimpleKMLLineString.m in Sources */,
 				2DE805C41A8338A100555DAD /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				2DE806091A83DC6700555DAD /* SimpleKMLLineStyle.m in Sources */,
 				B42126311A5DCD430041ED7B /* uncompr.c in Sources */,
 				2DE805BD1A8338A100555DAD /* CXMLNode_CreationExtensions.m in Sources */,
 				B42126271A5DCD430041ED7B /* deflate.c in Sources */,
 				B42126291A5DCD430041ED7B /* gzlib.c in Sources */,
+				2DE806061A83DC6700555DAD /* SimpleKMLIconStyle.m in Sources */,
 				B421262E1A5DCD430041ED7B /* inflate.c in Sources */,
 				2DE805C11A8338A100555DAD /* CXMLDocument_PrivateExtensions.m in Sources */,
 				2DE805BE1A8338A100555DAD /* CXMLDocument_CreationExtensions.m in Sources */,
+				2DE8060E1A83DC6700555DAD /* SimpleKMLPoint.m in Sources */,
 				2DE805C51A8338A100555DAD /* CXMLElement.m in Sources */,
 				2DE805C21A8338A100555DAD /* CXMLDocument.m in Sources */,
 				B421261E1A5DCD430041ED7B /* zip.c in Sources */,
 				B4CEA3C41A31520100569F5C /* DataEngine.m in Sources */,
+				2DE8060D1A83DC6700555DAD /* SimpleKMLPlacemark.m in Sources */,
 				B421262A1A5DCD430041ED7B /* gzread.c in Sources */,
 				2DE805C31A8338A100555DAD /* CXMLElement_CreationExtensions.m in Sources */,
+				2DE806051A83DC6700555DAD /* SimpleKMLGroundOverlay.m in Sources */,
 				B4CEA3A11A31510800569F5C /* MasterViewController.m in Sources */,
 				B40866101A3FA08E0093CC61 /* WebViewController.m in Sources */,
 				B42126241A5DCD430041ED7B /* adler32.c in Sources */,
 				B42126281A5DCD430041ED7B /* gzclose.c in Sources */,
 				2DE805C01A8338A100555DAD /* CXHTMLDocument.m in Sources */,
+				2DE8060F1A83DC6700555DAD /* SimpleKMLPolygon.m in Sources */,
 				B4CEA39B1A31510800569F5C /* main.m in Sources */,
 				2DE805C81A8338A100555DAD /* CXMLNode_XPathExtensions.m in Sources */,
+				2DE8060C1A83DC6700555DAD /* SimpleKMLOverlay.m in Sources */,
 				B4CEA3A41A31510800569F5C /* DetailViewController.m in Sources */,
 				B421261D1A5DCD430041ED7B /* unzip.c in Sources */,
 				2DE805CA1A8338A100555DAD /* CTidy.m in Sources */,
+				2DE806021A83DC6700555DAD /* SimpleKMLFeature.m in Sources */,
+				2DE806011A83DC6700555DAD /* SimpleKMLDocument.m in Sources */,
 				B42126251A5DCD430041ED7B /* compress.c in Sources */,
 				B421262C1A5DCD430041ED7B /* infback.c in Sources */,
 				B452FD591A52FD160033CCB1 /* KMLParser.m in Sources */,
+				2DE805FD1A83DC6700555DAD /* SimpleKML.m in Sources */,
 				B42126261A5DCD430041ED7B /* crc32.c in Sources */,
 				B40866151A3FA4230093CC61 /* MapViewController.m in Sources */,
 				B421262F1A5DCD430041ED7B /* inftrees.c in Sources */,
+				2DE805FE1A83DC6700555DAD /* SimpleKMLBalloonStyle.m in Sources */,
 				B452FD5A1A52FD160033CCB1 /* KMLViewerViewController.m in Sources */,
+				2DE806071A83DC6700555DAD /* SimpleKMLLinearRing.m in Sources */,
 				B42126221A5DCD430041ED7B /* ZipReadStream.m in Sources */,
 				B49BBFF51A32B2FA000CA48C /* ArtCardViewController.m in Sources */,
+				2DE806131A83DC6700555DAD /* SimpleKMLSubStyle.m in Sources */,
+				2DE806031A83DC6700555DAD /* SimpleKMLFolder.m in Sources */,
 				B454717F1A33D0AB008F2B17 /* XMLDictionary.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
